@@ -28,11 +28,14 @@
               "introduced": "7.0.0"
             },
             {
-              "fixed": "7.14.0"
+              "fixed": "7.15"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "< 7.14.0"
+      }
     },
     {
       "package": {
