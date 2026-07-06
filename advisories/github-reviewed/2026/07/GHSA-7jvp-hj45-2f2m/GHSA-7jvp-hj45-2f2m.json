@@ -9,7 +9,7 @@
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:P"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
@@ -17,6 +17,28 @@
       "package": {
         "ecosystem": "NuGet",
         "name": "Scriban"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "7.2.2"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 7.2.1"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "NuGet",
+        "name": "Scriban.Signed"
       },
       "ranges": [
         {
