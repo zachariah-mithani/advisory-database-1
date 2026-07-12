@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rgxp-2hwp-jwgg",
-  "modified": "2026-06-05T21:39:35Z",
+  "modified": "2026-06-05T21:39:36Z",
   "published": "2026-02-17T15:31:35Z",
   "aliases": [
     "CVE-2026-25087"
@@ -18,17 +18,14 @@
     {
       "package": {
         "ecosystem": "PyPI",
-        "name": "pyarrow"
+        "name": ""
       },
       "ranges": [
         {
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "15.0.0"
-            },
-            {
-              "fixed": "23.0.1"
+              "introduced": "0"
             }
           ]
         }
