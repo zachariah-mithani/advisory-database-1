@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-wmq2-jc9m-xp4m",
-  "modified": "2022-11-17T20:58:58Z",
+  "modified": "2023-01-28T05:00:57Z",
   "published": "2022-05-02T06:21:36Z",
   "aliases": [
     "CVE-2010-1330"
@@ -13,7 +13,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.jruby:jruby-core"
+        "name": "org.jruby:jruby"
       },
       "ranges": [
         {
@@ -24,6 +24,25 @@
             },
             {
               "fixed": "1.4.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.jruby.jcodings:jcodings"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
             }
           ]
         }
