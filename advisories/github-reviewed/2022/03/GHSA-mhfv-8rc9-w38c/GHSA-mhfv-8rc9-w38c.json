@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-mhfv-8rc9-w38c",
-  "modified": "2022-03-26T00:06:00Z",
+  "modified": "2023-01-11T05:06:12Z",
   "published": "2022-03-26T00:06:00Z",
   "aliases": [],
   "summary": "Arbitrary shell execution",
@@ -35,7 +35,11 @@
     },
     {
       "type": "PACKAGE",
-      "url": "https://github.com/squizlabs/PHP_CodeSniffer"
+      "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/tag/2.8.1"
     },
     {
       "type": "WEB",
