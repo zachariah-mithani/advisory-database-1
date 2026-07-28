@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jpjm-c3r5-q96r",
-  "modified": "2026-07-23T15:30:35Z",
+  "modified": "2026-07-23T15:31:36Z",
   "published": "2026-07-21T21:32:40Z",
   "aliases": [
     "CVE-2026-56852"
   ],
+  "summary": "Advisory database improvement for GHSA-jpjm-c3r5-q96r",
   "details": "A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "golang.org/x/text"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "0.39.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
