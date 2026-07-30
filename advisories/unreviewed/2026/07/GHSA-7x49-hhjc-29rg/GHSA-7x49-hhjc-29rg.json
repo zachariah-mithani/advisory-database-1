@@ -1,23 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7x49-hhjc-29rg",
-  "modified": "2026-07-26T06:31:26Z",
+  "modified": "2026-07-26T06:31:31Z",
   "published": "2026-07-26T06:31:26Z",
   "aliases": [
     "CVE-2026-63720"
   ],
+  "summary": "datamodel-code-generator Code Injection via Unvalidated customBasePath Schema Field",
   "details": "datamodel-code-generator prior to version 0.70.0 contains a code injection vulnerability that allows attackers who control input schemas to achieve remote code execution by supplying a malicious customBasePath value containing embedded newlines and a dot-free Python expression. The crafted value is emitted verbatim into a generated 'from ... import ...' statement without identifier validation, causing arbitrary Python code to execute when the generated module is imported.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "datamodel-code-generator"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "0.70.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -25,11 +42,23 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/koxudaxi/datamodel-code-generator/commit/545a96c5"
+      "url": "https://github.com/koxudaxi/datamodel-code-generator/commit/545a96c56d1b6a8dd3f4a16c9090d8a4648d1e43"
     },
     {
       "type": "WEB",
+      "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/63xxx/CVE-2026-63720.json"
+    },
+    {
+      "type": "PACKAGE",
       "url": "https://github.com/koxudaxi/datamodel-code-generator"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/koxudaxi/datamodel-code-generator/releases/tag/0.70.0"
+    },
+    {
+      "type": "WEB",
+      "url": "https://pypi.org/project/datamodel-code-generator"
     },
     {
       "type": "WEB",
