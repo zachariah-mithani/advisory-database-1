@@ -1,18 +1,14 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-r9vw-cjf9-xh4x",
-  "modified": "2024-11-18T16:26:54Z",
+  "modified": "2024-11-18T16:26:55Z",
   "published": "2024-07-19T21:31:11Z",
   "aliases": [
     "CVE-2024-41597"
   ],
-  "summary": "ProcessWire Cross Site Request Forgery vulnerability",
-  "details": "Cross Site Request Forgery vulnerability in ProcessWire v.3.0.229 allows a remote attacker to execute arbitrary code via a crafted HTML file to the comments functionality.",
+  "summary": "ProcessWire CommentForm CSRF claim is disputed",
+  "details": "ProcessWire’s CommentForm intentionally permits anonymous submissions through a public comment endpoint. CVE-2024-41597 characterizes this behavior as CSRF, but ProcessWire disputes that classification because the request does not exercise authority associated with the visitor’s session, and the same comment can be submitted directly. Submitted comments are held for moderator review by default. The original claim that this permits arbitrary code execution is incorrect.",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
@@ -54,9 +50,7 @@
     }
   ],
   "database_specific": {
-    "cwe_ids": [
-      "CWE-352"
-    ],
+    "cwe_ids": [],
     "severity": "LOW",
     "github_reviewed": true,
     "github_reviewed_at": "2024-07-19T22:39:58Z",
