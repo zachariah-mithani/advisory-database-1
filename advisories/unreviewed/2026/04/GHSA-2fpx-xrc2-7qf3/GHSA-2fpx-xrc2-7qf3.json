@@ -6,18 +6,30 @@
   "aliases": [
     "CVE-2026-5536"
   ],
-  "details": "A weakness has been identified in FedML-AI FedML up to 0.8.9. Affected is the function sendMessage of the file grpc_server.py of the component gRPC server. Executing a manipulation can lead to deserialization. The attack may be performed from remote. The vendor was contacted early about this disclosure but did not respond in any way.",
-  "severity": [
+  "summary": "FedML gRPC server deserializes unauthenticated remote input via pickle (RCE)",
+  "details": "A weakness has been identified in FedML-AI FedML up to 0.8.9. Affected is the function sendMessage of the file grpc_server.py of the component gRPC server. Executing a manipulation can lead to deserialization. The attack may be performed from remote. The vendor was contacted early about this disclosure but did not respond in any way.\n\n---\n\n### Suggested corrections (submitted by a third party, not the original reporter)\n\nI verified the reported sink against the **currently released** package and believe three fields on this record are inaccurate in ways that leave users unprotected.\n\n**1. The affected range is too narrow.** The record states \"up to 0.8.9\". The vulnerable code is unchanged in **fedml 0.9.6**, the current PyPI release:\n\n- `fedml/core/distributed/communication/grpc/grpc_server.py` — `GRPCCOMMServicer.sendMessage()` performs no authentication or origin validation; it logs the peer address and places the raw request body straight onto `self.message_q`.\n- `fedml/core/distributed/communication/grpc/grpc_comm_manager.py:167` — the receive loop pops that value and calls `pickle.loads(msg_pkl)` directly.\n- `grpc_comm_manager.py` binds the listener with `add_insecure_port()` on `0.0.0.0:<GRPC_BASE_PORT + rank>` (`GRPC_BASE_PORT = 8890`), so there is no TLS and no credential requirement.\n\nA user on 0.9.6 reading \"up to 0.8.9\" would reasonably conclude they are unaffected. Suggested range: `<= 0.9.6` pending a fixed release.\n\n**2. No package is associated, so the advisory cannot alert anyone.** With no ecosystem/package and \"Affected versions: Unknown\", dependency scanners cannot match it. Suggested: ecosystem `pip`, package `fedml`.\n\n**3. The severity appears understated.** The current vector is `VC:L/VI:L/VA:L` (6.9 Moderate). `pickle.loads()` on unauthenticated remote input is arbitrary code execution, not a limited-impact issue — the deserialiser constructs attacker-chosen objects during unpickling. That supports `VC:H/VI:H/VA:H`, i.e. `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H` (9.3 Critical), equivalent to `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H` (9.8).\n\nI am not the original reporter and have no PoC to add — this is a metadata correction only, based on reading the released 0.9.6 source. Please verify independently before applying.\n\n— Mohammad Adnan (CyStack)",
+  "severity": [],
+  "affected": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
-    },
-    {
-      "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "fedml"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "0.9.6"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "affected": [],
   "references": [
     {
       "type": "ADVISORY",
@@ -26,6 +38,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/AnalogyC0de/public_exp/issues/26"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/FedML-AI/FedML"
     },
     {
       "type": "WEB",
@@ -44,7 +60,7 @@
     "cwe_ids": [
       "CWE-20"
     ],
-    "severity": "MODERATE",
+    "severity": null,
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2026-04-05T04:16:09Z"
