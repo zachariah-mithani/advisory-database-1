@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fvqr-27wr-82fm",
-  "modified": "2025-08-12T21:37:06Z",
+  "modified": "2025-08-12T21:37:10Z",
   "published": "2018-07-26T15:14:52Z",
   "aliases": [
     "CVE-2018-3721"
   ],
   "summary": "Prototype Pollution in lodash",
-  "details": "Versions of `lodash` before 4.17.5 are vulnerable to prototype pollution. \n\nThe vulnerable functions are 'defaultsDeep', 'merge', and 'mergeWith' which allow a malicious user to modify the prototype of `Object` via `__proto__` causing the addition or modification of an existing property that will exist on all objects.\n\n\n\n\n## Recommendation\n\nUpdate to version 4.17.5 or later.",
+  "details": "Versions of `lodash` after 0.4.2 and before 4.17.5 are vulnerable to prototype pollution. \n\nThe vulnerable functions are 'defaultsDeep', 'merge', and 'mergeWith' which allow a malicious user to modify the prototype of `Object` via `__proto__` causing the addition or modification of an existing property that will exist on all objects.\n\n\n\n\n## Recommendation\n\nUpdate to version 4.17.5 or later.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -25,7 +25,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "0.5.0-rc.1"
             },
             {
               "fixed": "4.17.5"
@@ -44,7 +44,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "0.5.0-rc.1"
             },
             {
               "fixed": "4.17.5"
