@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-m4ch-4m5f-2gp6",
-  "modified": "2023-11-14T20:39:17Z",
+  "modified": "2023-11-14T20:39:19Z",
   "published": "2023-11-14T18:30:24Z",
   "aliases": [
     "CVE-2023-46998"
@@ -26,9 +26,6 @@
           "events": [
             {
               "introduced": "3.2.0"
-            },
-            {
-              "last_affected": "6.0.0"
             }
           ]
         }
