@@ -1,23 +1,14 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-h39j-r5qq-r9mm",
-  "modified": "2026-07-29T15:51:53Z",
+  "modified": "2026-07-29T15:51:55Z",
   "published": "2026-06-05T09:33:46Z",
   "aliases": [
     "CVE-2026-10732"
   ],
   "summary": "decompress: Arbitrary File Write via Archive Extraction (Zip Slip)",
   "details": "All versions of the package decompress are vulnerable to Arbitrary File Write via Archive Extraction (Zip Slip) when extracting a ZIP archive containing two entries with the same path - the first being a symlink to an arbitrary target and the second being a regular file - the file content is written through the symlink to the target location outside the output directory. This is due to the microtask processing order that checks readlink for the second file before resolving symlink for the first file. An attacker can write arbitrary files on the host filesystem potentially leading to remote code execution by providing a specially crafted ZIP archive.\n\n**Note:**\n\nThis bypasses all existing path traversal protections including preventWritingThroughSymlink, added as a part of the fix for [CVE-2020-12265](https://security.snyk.io/vuln/SNYK-JS-DECOMPRESS-557358).",
-  "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:H/A:L"
-    },
-    {
-      "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N/E:P"
-    }
-  ],
+  "severity": [],
   "affected": [
     {
       "package": {
@@ -75,10 +66,10 @@
   ],
   "database_specific": {
     "cwe_ids": [
-      "CWE-29",
-      "CWE-22"
+      "CWE-22",
+      "CWE-29"
     ],
-    "severity": "MODERATE",
+    "severity": "LOW",
     "github_reviewed": true,
     "github_reviewed_at": "2026-07-29T15:51:53Z",
     "nvd_published_at": "2026-06-05T07:16:29Z"
