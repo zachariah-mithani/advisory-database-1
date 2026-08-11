@@ -1,17 +1,17 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xgrm-4fwx-7qm8",
-  "modified": "2026-06-26T20:04:58Z",
+  "modified": "2026-06-26T20:04:59Z",
   "published": "2026-04-07T18:31:36Z",
   "aliases": [
     "CVE-2026-33815"
   ],
-  "summary": "pgx contains memory-safety vulnerability",
-  "details": "[pgx](github.com/jackc/pgx/v5) is a pure Go driver and toolkit for PostgreSQL. pgx prior to v5.9.0 contains a memory-safety vulnerability.",
+  "summary": "pgx server-side implementation panic on malformed input",
+  "details": "[pgx](github.com/jackc/pgx/v5) is a pure Go driver and toolkit for PostgreSQL. pgx's server-side PostgreSQL protocol implementation prior to v5.9.0 contains an out-of-bound slice access that can be triggered with crafted packets and leads to panic and process termination.\n\nMost users use this library as PostgreSQL client, and thus are unaffected.",
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
     }
   ],
   "affected": [
@@ -63,7 +63,7 @@
   ],
   "database_specific": {
     "cwe_ids": [],
-    "severity": "CRITICAL",
+    "severity": "MODERATE",
     "github_reviewed": true,
     "github_reviewed_at": "2026-04-10T14:10:46Z",
     "nvd_published_at": "2026-04-07T16:16:24Z"
