@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xwmg-2g98-w7v9",
-  "modified": "2025-09-19T21:31:45Z",
+  "modified": "2025-09-19T21:31:47Z",
   "published": "2025-07-11T03:30:34Z",
   "aliases": [
     "CVE-2025-53864"
   ],
-  "summary": "Nimbus JOSE + JWT is vulnerable to DoS attacks when processing deeply nested JSON",
-  "details": "Connect2id Nimbus JOSE + JWT before 10.0.2 allows a remote attacker to cause a denial of service via a deeply nested JSON object supplied in a JWT claim set, because of uncontrolled recursion. NOTE: this is independent of the Gson 2.11.0 issue because the Connect2id product could have checked the JSON object nesting depth, regardless of what limits (if any) were imposed by Gson.",
+  "summary": "Nimbus JOSE + JWT is vulnerable to DoS attacks when processing deeply nested JSON via dependencies",
+  "details": "Connect2id Nimbus JOSE + JWT before 10.0.2 allows a remote attacker to cause a denial of service via a deeply nested JSON object supplied in a JWT claim set, because of uncontrolled recursion. **This happens due to a vulnerability in the underlying dependency used to parse the JSON, not within the Nimbus codebase itself.**\n\nNOTE: \n- this is NOT independent of the Gson 2.11.0 issue because the official solution was just to upgrade the dependency. see: [f7fb882](https://bitbucket.org/connect2id/nimbus-jose-jwt/commits/f7fb882cc08f027c9ceb874acec3b51c6222861c)\n- for versions before  9.24 the dependency was JSON Smart 2.4.8 [74a64ad](https://bitbucket.org/connect2id/nimbus-jose-jwt/commits/74a64ad633771362d7a30edb359f9e02e6774143), this vuln was fixed on json-smart-v2 2.4.9. see: https://github.com/advisories/GHSA-493p-pfq6-5258",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -25,10 +25,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "9.38-rc1"
+              "introduced": "0"
             },
             {
-              "fixed": "10.0.2"
+              "fixed": "9.37.4"
             }
           ]
         }
@@ -44,10 +44,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "9.38-rc1"
             },
             {
-              "fixed": "9.37.4"
+              "fixed": "10.0.2"
             }
           ]
         }
