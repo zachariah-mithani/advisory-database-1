@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-397p-hh8q-gwmh",
-  "modified": "2026-08-11T03:31:57Z",
+  "modified": "2026-08-11T03:32:05Z",
   "published": "2026-08-11T03:31:57Z",
   "aliases": [
     "CVE-2026-66775"
   ],
+  "summary": "Cross-Site Request Forgery in @sap/approuter",
   "details": "SAP Approuter does not enforce cross-site request forgery protection on the authentication flow by default. An unauthenticated attacker could craft a malicious link and trick a victim into following it. Successful exploitation could allow the attacker to bind the victim's session to an attacker-controlled identity, resulting in a low impact on integrity. There is no impact on confidentiality and availability.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@sap/approuter"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "23.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
