@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rpf9-hrjr-88fv",
-  "modified": "2026-07-28T18:33:02Z",
+  "modified": "2026-07-28T18:34:07Z",
   "published": "2026-07-28T15:32:18Z",
   "aliases": [
     "CVE-2026-66299"
   ],
+  "summary": "Apache Tomcat: Uncontrolled Resource Consumption in WebSocket chat example",
   "details": "Uncontrolled Resource Consumption vulnerability in Apache Tomcat's WebSocket chat example.\n\nThis issue affects Apache Tomcat: from 11.0.0-M20 through 11.0.24, from 10.1.24 through 10.1.57, from 9.0.89 through 9.0.120. Users who have followed the security guidance to remove the examples web application are not affected by this issue.\n\nUsers are recommended to remove the examples web application or to upgrade to version 11.0.25, 10.1.58 or 9.0.121 (when released), which fix the issue.",
   "severity": [
     {
@@ -13,7 +14,74 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0-M20"
+            },
+            {
+              "fixed": "11.0.25"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 11.0.24"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.24"
+            },
+            {
+              "fixed": "10.1.58"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 10.1.57"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.89"
+            },
+            {
+              "fixed": "9.0.121"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 9.0.120"
+      }
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
