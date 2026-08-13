@@ -1,17 +1,17 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fm7p-gw32-828p",
-  "modified": "2026-07-29T17:21:26Z",
+  "modified": "2026-07-29T17:21:27Z",
   "published": "2026-07-29T17:21:26Z",
   "aliases": [
     "CVE-2026-54705"
   ],
   "summary": "mathlive's Lack of Escaping of HTML allows for XSS",
-  "details": "### Summary\n\nDespite the 0.104.0 patch escaping attribute-bearing constructs (`\\htmlData`, `\\href`), text-content reflection was missed. The `\\text{}`, `\\mbox{}` commands accept arbitrary characters in their body and emit them raw and unescaped into both the HTML markup and the MathML output, leading to XSS.\n\n### Details\n\n`Box.toMarkup` at `src/core/box.ts:356` concatenates `this.value` into the rendered span without HTML-escaping. In text mode any literal character (`<`, `>`, `&`, `\"`) is wrapped into a `TextAtom` whose `value` is the raw codepoint and lands in the markup unchanged. The MathML serializer at `src/formats/atom-to-math-ml.ts` is independently broken: `xmlEscape` deliberately omits the `&` rule, and `scanText`, `case 'text'`, and the `mode === 'text'` early return all emit `atom.value` raw.\n\nBoth outputs flow into `innerHTML` sinks via the public API. `<math-span>` / `<math-div>` (`src/public/math-static-elements.ts:331,407`) bypass `MathfieldElement.createHTML` entirely. The editor and SSR paths route through `createHTML`, but its default value is the identity function (`src/public/mathfield-element.ts:789`).\n\n### PoC\n\n1. Go to https://mathlive.io/mathfield/demo/\n2. open DevTools console and paste:\n\n```js\nconst s = document.createElement('math-span');\ns.style.display = 'block';\ns.textContent = '\\\\text{<img src=x onerror=alert(1)>}';\ndocument.body.appendChild(s);\ns.scrollIntoView();\n```\n\nEquivalent payloads: `\\mbox{<img src=x onerror=alert(1)>}`\n\nor\n\n```js\nimport { convertLatexToMarkup } from 'mathlive';\ndocument.body.innerHTML = convertLatexToMarkup('\\\\text{<img src=x onerror=alert(1)>}');\n```\n\n### Impact\n\nMathLive users who render untrusted mathematical expressions can encounter malicious input that runs arbitrary JavaScript.",
+  "details": "### Summary\n\nMathLive does not consistently escape text content when converting LaTeX expressions to HTML and MathML. Although the 0.104.0 patch added escaping for attribute-bearing constructs such as \\htmlData and \\href, text-content handling remained insufficiently escaped.\n\nThe \\text{} and \\mbox{} commands can accept arbitrary characters in their body. In affected versions, these characters may be emitted directly into generated HTML and MathML markup without the required escaping. If an application renders attacker-controlled mathematical expressions, this can allow attacker-controlled HTML to be interpreted by the browser and result in cross-site scripting (XSS).\n\n### Details\n\nIn the HTML rendering path, Box.toMarkup at src/core/box.ts:356 concatenates this.value into the generated <span> without HTML escaping. In text mode, literal characters such as <, >, &, and \" can therefore reach the generated markup unchanged.\n\nThe MathML serialization path has a separate escaping issue in src/formats/atom-to-math-ml.ts. The xmlEscape implementation does not escape &, while the scanText, case 'text', and mode === 'text' paths can emit atom.value without appropriate XML/HTML escaping.\n\nThese rendering paths can ultimately reach innerHTML sinks through MathLive's public APIs. In particular, <math-span> and <math-div> in src/public/math-static-elements.ts bypass MathfieldElement.createHTML. Other editor and SSR paths use createHTML, whose default transformation function is the identity function at src/public/mathfield-element.ts:789.\n\n### Relationship to CVE-2025-29049\n\nThis issue should be distinguished from CVE-2025-29049, an earlier MathLive XSS vulnerability affecting versions up to 0.103.0 and fixed in 0.104.0.\n\nThe earlier fix addressed escaping related to attribute-bearing constructs such as \\htmlData and \\href. The issue described here concerns text-content rendering through constructs such as \\text{} and \\mbox{} and therefore represents a separate escaping path that remained affected after the 0.104.0 fix.\n\nThis distinction is relevant for users who upgraded to 0.104.0 or later to address CVE-2025-29049: that upgrade did not address the text-content escaping issue described by this advisory.\n\n### Proof of Concept\n\nAn affected MathLive instance can be tested with the following input:\n\nconst s = document.createElement('math-span');\ns.style.display = 'block';\ns.textContent = '\\\\text{<img src=x onerror=alert(1)>}';\ndocument.body.appendChild(s);\ns.scrollIntoView();\n\nAn equivalent payload can be produced with \\mbox{<img src=x onerror=alert(1)>}.\n\nThe conversion API can also demonstrate the issue:\n\nimport { convertLatexToMarkup } from 'mathlive';\n\ndocument.body.innerHTML = convertLatexToMarkup('\\\\text{<img src=x onerror=alert(1)>}');\n\n### Impact\n\nApplications that render untrusted LaTeX or mathematical expressions with an affected version of MathLive may allow attacker-controlled HTML to be interpreted in the application's origin. Depending on the application's context and privileges, this can result in arbitrary JavaScript execution and cross-site scripting (XSS).\n\nUsers should upgrade to the fixed version or otherwise ensure that untrusted mathematical input is safely escaped or sanitized before it is rendered.\n",
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
     }
   ],
   "affected": [
@@ -42,6 +42,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/arnog/mathlive/security/advisories/GHSA-fm7p-gw32-828p"
+    },
+    {
+      "type": "ADVISORY",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-29049"
     },
     {
       "type": "WEB",
