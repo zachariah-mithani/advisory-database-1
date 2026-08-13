@@ -6,6 +6,7 @@
   "aliases": [
     "CVE-2026-58238"
   ],
+  "summary": "Denial of Service (DoS) in @sap/approuter",
   "details": "SAP Approuter does not sufficiently handle certain requests under specific conditions. An unauthenticated attacker could send specially crafted input that causes the component to crash and restart. Successful exploitation requires specific runtime conditions to be met, making the attack complex to execute. This results in a high impact on availability. There is no impact on confidentiality and integrity.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@sap/approuter"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "23.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
