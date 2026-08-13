@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-82g4-h784-m68h",
-  "modified": "2026-08-11T03:31:57Z",
+  "modified": "2026-08-11T03:31:58Z",
   "published": "2026-08-11T03:31:57Z",
   "aliases": [
     "CVE-2026-66774"
   ],
+  "summary": "Denial of Service in @sap/approuter",
   "details": "SAP Approuter does not consistently handle certain error conditions. An attacker with low privileges could exploit this under a non-default configuration. Successful exploitation is highly complex, as it depends on conditions outside the attacker's control. This could result in a low impact on availability. There is no impact on confidentiality and integrity.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@sap/approuter"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "23.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
