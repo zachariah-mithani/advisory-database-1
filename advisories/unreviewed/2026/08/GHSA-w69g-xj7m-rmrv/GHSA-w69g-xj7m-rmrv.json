@@ -6,6 +6,7 @@
   "aliases": [
     "CVE-2026-58239"
   ],
+  "summary": "Identity Spoofing vulnerability in @sap/approuter",
   "details": "SAP Approuter does not sufficiently validate tenant context in inbound requests. An unauthenticated attacker could send specially crafted requests to spoof the tenant context under conditions not fully within their control. Successful exploitation could allow limited access to another tenant's information, resulting in a low impact on confidentiality. There is no impact on integrity and availability.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@sap/approuter"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "23.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
