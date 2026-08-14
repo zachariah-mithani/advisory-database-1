@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-c3q9-q986-vrwh",
-  "modified": "2025-03-14T20:04:19Z",
+  "modified": "2025-03-14T20:04:21Z",
   "published": "2025-03-10T18:31:57Z",
   "aliases": [
     "CVE-2025-1296"
@@ -28,11 +28,14 @@
               "introduced": "0"
             },
             {
-              "last_affected": "1.9.6"
+              "fixed": "1.9.7"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 1.9.6"
+      }
     }
   ],
   "references": [
