@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q86x-4w7f-8hrm",
-  "modified": "2026-07-02T09:32:03Z",
+  "modified": "2026-07-02T09:32:10Z",
   "published": "2026-07-02T09:32:03Z",
   "aliases": [
     "CVE-2026-9563"
   ],
+  "summary": "Eclipse Parsson vulnerable to Uncontrolled Resource Consumption when parsing untrusted JSON",
   "details": "In Eclipse Parsson published Maven Central artifacts before version 1.1.8, the JSON parser did not enforce a default maximum on the number of characters consumed while parsing a single JSON document. Applications that parse attacker- controlled JSON can be forced to consume excessive CPU and memory by processing very large documents, including large arrays, objects, strings, numbers, whitespace, or nested structures, resulting in a denial of service. Eclipse Parsson 1.1.8 introduces a configurable maximum parsing limit with a default limit of 15 million parser-consumed characters.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.eclipse.parsson:parsson"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -26,6 +47,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/eclipse-ee4j/parsson/commit/134e8d101aa74c8b9302d0cb62f6ccb4912a9d0c"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/eclipse-ee4j/parsson"
     },
     {
       "type": "WEB",
