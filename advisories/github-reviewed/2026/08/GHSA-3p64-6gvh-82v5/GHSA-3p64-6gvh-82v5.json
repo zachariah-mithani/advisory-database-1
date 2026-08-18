@@ -17,7 +17,7 @@
   "affected": [
     {
       "package": {
-        "ecosystem": "npm",
+        "ecosystem": "PyPI",
         "name": "mlflow"
       },
       "ranges": [
