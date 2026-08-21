@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-vgq7-9r5r-j9v3",
-  "modified": "2025-11-25T21:01:13Z",
+  "modified": "2025-11-25T21:01:14Z",
   "published": "2025-11-24T18:31:12Z",
   "aliases": [
     "CVE-2025-60632"
   ],
   "summary": "Free5GC is vulnerable to DoS through its Npcf_BDTPolicyControl POST API",
-  "details": "An issue was discovered in Free5GC v4.0.0 and v4.0.1 allowing an attacker to cause a denial of service via crafted POST request to the Npcf_BDTPolicyControl API.",
+  "details": "An issue was discovered in Free5GC v4.0.0 and v4.0.1 allowing an attacker to cause a denial of service via crafted POST request to the Npcf_BDTPolicyControl API.\n\n### Credits\n\nThis vulnerability was originally discovered and reported by\nRiccardo Preatoni and Anqi Chen.\n\nOriginal report: https://github.com/free5gc/free5gc/issues/705",
   "severity": [
     {
       "type": "CVSS_V3",
