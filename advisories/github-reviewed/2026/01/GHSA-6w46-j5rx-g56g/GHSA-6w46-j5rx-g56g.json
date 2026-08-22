@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6w46-j5rx-g56g",
-  "modified": "2026-04-13T16:38:46Z",
+  "modified": "2026-04-13T16:38:47Z",
   "published": "2026-01-22T06:30:29Z",
   "aliases": [
     "CVE-2025-71176"
@@ -54,7 +54,7 @@
     },
     {
       "type": "PACKAGE",
-      "url": "https://github.com/pytest-dev/pytes"
+      "url": "https://github.com/pytest-dev/pytest"
     },
     {
       "type": "WEB",
