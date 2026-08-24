@@ -1,23 +1,43 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xm8c-hvjf-c5q9",
-  "modified": "2026-08-10T21:32:09Z",
+  "modified": "2026-08-10T21:32:15Z",
   "published": "2026-08-10T21:32:09Z",
   "aliases": [
     "CVE-2026-73035"
   ],
+  "summary": "npm-check-updates terminal escape sequence injection via unsanitized package and registry text",
   "details": "npm-check-updates through 23.0.2, fixed in commit b554b84, contains a terminal escape sequence injection vulnerability that allows an attacker to embed arbitrary terminal control characters in a dependency's package.json homepage or repository URL fields. When a developer runs ncu with the --format homepage or --format repo option, unfiltered escape sequences are written directly to the terminal, enabling malicious output manipulation or other terminal-dependent effects.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "npm-check-updates"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "23.1.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 23.0.2"
+      }
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -34,6 +54,14 @@
     {
       "type": "WEB",
       "url": "https://github.com/raineorshine/npm-check-updates/commit/b554b84848fc0b08a9d2b3d3db15e351387168cf"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/raineorshine/npm-check-updates"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/raineorshine/npm-check-updates/blob/v23.1.0/package.json"
     },
     {
       "type": "WEB",
