@@ -1,24 +1,19 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-698x-9w2p-7vvp",
-  "modified": "2026-07-07T23:47:00Z",
+  "modified": "2026-07-07T23:47:01Z",
   "published": "2026-06-01T09:31:12Z",
   "aliases": [
     "CVE-2026-10517"
   ],
   "summary": "Claircore: Unauthenticated attackers can submit manifests with URIs pointing to internal services or cloud metadata endpoints",
-  "details": "A flaw was found in Clair. The fetcher component makes outbound HTTP requests to attacker-supplied URIs from manifest layer descriptors without IP or scheme filtering. When PSK authentication is not configured (opt-in, not enforced by default), an unauthenticated attacker can submit a manifest with a URI pointing to internal services or cloud metadata endpoints. The SSRF is reflective for non-200 responses, leaking up to 256 bytes of error body content via CheckResponse error messages. Operator-managed Red Hat Quay deployments auto-configure PSK and are not exposed to the unauthenticated attack vector.",
-  "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
-    }
-  ],
+  "details": "This advisory has been retracted",
+  "severity": [],
   "affected": [
     {
       "package": {
         "ecosystem": "Go",
-        "name": "github.com/quay/claircore"
+        "name": ""
       },
       "ranges": [
         {
@@ -26,9 +21,6 @@
           "events": [
             {
               "introduced": "0"
-            },
-            {
-              "last_affected": "1.5.52"
             }
           ]
         }
@@ -57,7 +49,7 @@
     "cwe_ids": [
       "CWE-918"
     ],
-    "severity": "MODERATE",
+    "severity": "LOW",
     "github_reviewed": true,
     "github_reviewed_at": "2026-07-07T23:47:00Z",
     "nvd_published_at": "2026-06-01T09:16:16Z"
