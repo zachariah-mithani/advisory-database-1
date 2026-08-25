@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-v7hr-hgg3-vv6q",
-  "modified": "2026-08-24T12:31:38Z",
+  "modified": "2026-08-24T12:31:46Z",
   "published": "2026-08-24T12:31:38Z",
   "aliases": [
     "CVE-2026-59295"
   ],
+  "summary": "Memory leak/NPE in MicrometerHttpClientInterceptor (HC4 & HC5)",
   "details": "Micrometer-instrumented Apache HttpAsyncClient (4.x or 5.x) usage via MicrometerHttpClientInterceptor can leak memory unboundedly when asynchronous requests fail before receiving a response (e.g. connection resets or timeouts). Tracking state for these requests remains in memory indefinitely, and sustained failures lead to heap exhaustion and OutOfMemoryError crashes.",
   "severity": [
     {
@@ -13,15 +14,54 @@
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
-  "references": [
+  "affected": [
     {
-      "type": "WEB",
-      "url": "https://github.com/spring-projects/security-advisories/security/advisories/GHSA-747c-jhq3-w433"
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.micrometer:micrometer-tracing-bridge-brave"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.16.7"
+            }
+          ]
+        }
+      ]
     },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.micrometer:micrometer-tracing-bridge-brave"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.17.0"
+            },
+            {
+              "fixed": "1.17.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59295"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/micrometer-metrics/micrometer/commit/1ceb131347a6289ec6209b7c19941b2c50b8bf8e"
     },
     {
       "type": "WEB",
