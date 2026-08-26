@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-gjrp-xgmh-x9qq",
-  "modified": "2026-01-11T14:54:35Z",
+  "modified": "2026-01-11T14:54:36Z",
   "published": "2026-01-08T21:36:37Z",
   "aliases": [
     "CVE-2026-22596"
@@ -47,7 +47,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "5.105.0"
+              "introduced": "5.90.0"
             },
             {
               "fixed": "5.130.6"
