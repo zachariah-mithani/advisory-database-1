@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-73mf-m39p-wpm9",
-  "modified": "2026-08-28T17:23:04Z",
+  "modified": "2026-08-28T17:23:05Z",
   "published": "2026-08-28T17:23:04Z",
   "aliases": [
     "CVE-2026-55559"
@@ -11,36 +11,14 @@
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+      "score": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H"
     }
   ],
   "affected": [
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.yamcs:yamcs-core"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "5.13.0"
-            },
-            {
-              "fixed": "5.13.2"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 5.13.1"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.yamcs:yamcs-core"
+        "name": ""
       },
       "ranges": [
         {
@@ -48,16 +26,10 @@
           "events": [
             {
               "introduced": "0"
-            },
-            {
-              "fixed": "5.12.8"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 5.12.7"
-      }
+      ]
     }
   ],
   "references": [
@@ -92,7 +64,7 @@
       "CWE-470",
       "CWE-94"
     ],
-    "severity": "CRITICAL",
+    "severity": "HIGH",
     "github_reviewed": true,
     "github_reviewed_at": "2026-08-28T17:23:04Z",
     "nvd_published_at": null
