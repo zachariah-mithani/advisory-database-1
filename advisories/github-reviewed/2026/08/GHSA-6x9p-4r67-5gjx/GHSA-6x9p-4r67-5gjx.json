@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6x9p-4r67-5gjx",
-  "modified": "2026-08-26T14:07:26Z",
+  "modified": "2026-08-26T14:07:28Z",
   "published": "2026-08-26T14:07:26Z",
   "aliases": [
     "CVE-2026-54356"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "3.38.1"
+              "fixed": "3.41.3"
             }
           ]
         }
