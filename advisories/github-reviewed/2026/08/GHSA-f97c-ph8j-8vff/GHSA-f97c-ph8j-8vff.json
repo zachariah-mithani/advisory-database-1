@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-f97c-ph8j-8vff",
-  "modified": "2026-08-28T19:05:25Z",
+  "modified": "2026-08-28T19:05:26Z",
   "published": "2026-08-28T19:05:25Z",
   "aliases": [
     "CVE-2026-55212"
@@ -28,14 +28,11 @@
               "introduced": "0"
             },
             {
-              "fixed": "2026.1.6"
+              "fixed": "2025.4.6"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 2025.4.6"
-      }
+      ]
     },
     {
       "package": {
