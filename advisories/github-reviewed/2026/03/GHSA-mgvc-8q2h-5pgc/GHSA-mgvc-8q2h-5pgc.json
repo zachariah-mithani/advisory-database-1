@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-mgvc-8q2h-5pgc",
-  "modified": "2026-03-20T20:42:31Z",
+  "modified": "2026-03-20T20:42:32Z",
   "published": "2026-03-20T00:31:28Z",
   "aliases": [
     "CVE-2026-22733"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-starter-actuator"
+        "name": "org.springframework.boot:spring-boot-actuator"
       },
       "ranges": [
         {
@@ -37,7 +37,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-starter-actuator"
+        "name": "org.springframework.boot:spring-boot-actuator"
       },
       "ranges": [
         {
@@ -56,7 +56,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-starter-actuator"
+        "name": "org.springframework.boot:spring-boot-actuator"
       },
       "ranges": [
         {
@@ -75,7 +75,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-starter-actuator"
+        "name": "org.springframework.boot:spring-boot-actuator"
       },
       "ranges": [
         {
@@ -94,7 +94,83 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-starter-actuator"
+        "name": "org.springframework.boot:spring-boot-actuator"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "2.7.18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.boot:spring-boot-actuator-autoconfigure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0-M1"
+            },
+            {
+              "fixed": "4.0.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.boot:spring-boot-actuator-autoconfigure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.5.0"
+            },
+            {
+              "fixed": "3.5.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.boot:spring-boot-actuator-autoconfigure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "last_affected": "3.3.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.boot:spring-boot-actuator-autoconfigure"
       },
       "ranges": [
         {
