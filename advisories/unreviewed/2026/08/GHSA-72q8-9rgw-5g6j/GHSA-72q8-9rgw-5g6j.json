@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-72q8-9rgw-5g6j",
-  "modified": "2026-08-13T18:31:22Z",
+  "modified": "2026-08-13T18:31:23Z",
   "published": "2026-08-11T21:33:12Z",
   "aliases": [
     "CVE-2026-71290"
   ],
+  "summary": "Update affected products",
   "details": "Improper TLS hostname verification vulnerability in Apache HttpComponents Client 5.4 or newer. HostnameVerificationPolicy#BUILTIN setting has no effect when used with the async version of HttpClient. An attacker that can intercept and modify traffic between the client and\n the server can impersonate the server by presenting a valid certificate\n for a different domain. \n\n\nPlease note the classic version of HttpClient is not affected by this vulnerability. \n\nAffected users are recommended to upgrade to at least version 5.6.4, which fixes the issue.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.httpcomponents.client5:httpclient5"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.4"
+            },
+            {
+              "fixed": "5.6.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
