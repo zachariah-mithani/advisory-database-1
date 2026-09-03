@@ -7,7 +7,7 @@
     "CVE-2026-16723"
   ],
   "summary": "fastjson has a remote code execution (RCE) vulnerability",
-  "details": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration — no AutoType enablement required, no classpath gadget required.",
+  "details": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.37 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration — no AutoType enablement required, no classpath gadget required.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -25,20 +25,27 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "1.2.68"
+              "introduced": "1.2.37"
             },
             {
-              "last_affected": "1.2.83"
+              "fixed": "1.2.84"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 1.2.83"
+      }
     }
   ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16723"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/alibaba/fastjson/compare/1.2.36...1.2.37"
     },
     {
       "type": "PACKAGE",
