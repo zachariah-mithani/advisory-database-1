@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rqrh-ghmh-74j5",
-  "modified": "2026-08-07T00:31:09Z",
+  "modified": "2026-08-07T00:32:15Z",
   "published": "2026-08-06T12:31:13Z",
   "aliases": [
     "CVE-2026-57819"
   ],
+  "summary": "Apache CXF: No default restriction on the amount of form parameters per message",
   "details": "Apache CXF allows to set a limit on the number of form parameters in a JAX-RS message via the \"maxFormParameterCount\" configuration option. However, no default limit is set which may lead to denial of service attacks when processing  requests with very large numbers of form parameters. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue by using a default limit of 500 parameters.",
   "severity": [
     {
@@ -13,7 +14,65 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-frontend-jaxrs"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.6.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-frontend-jaxrs"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-frontend-jaxrs"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.2.0"
+            },
+            {
+              "fixed": "4.2.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
