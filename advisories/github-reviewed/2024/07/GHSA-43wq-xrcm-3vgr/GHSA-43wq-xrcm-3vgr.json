@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-43wq-xrcm-3vgr",
-  "modified": "2024-07-11T19:10:43Z",
+  "modified": "2024-07-31T05:02:57Z",
   "published": "2024-07-10T06:33:51Z",
   "aliases": [
     "CVE-2024-21521"
@@ -9,10 +9,6 @@
   "summary": "@discordjs/opus vulnerable to Denial of Service",
   "details": "All versions of the package @discordjs/opus are vulnerable to Denial of Service (DoS) due to providing an input object with a property toString to several different functions. Exploiting this vulnerability could lead to a process crash.",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
@@ -32,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "0.9.0"
+              "fixed": "0.10.0"
             }
           ]
         }
@@ -46,6 +42,14 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/discordjs/opus/pull/157"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/discordjs/opus/commit/8f52fa01b8229d92bca1027f1e89c5cf71b48133"
+    },
+    {
+      "type": "WEB",
       "url": "https://gist.github.com/dellalibera/98c48fd74bb240adbd7841a5c02aba9e"
     },
     {
@@ -55,6 +59,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/discordjs/opus/blob/814e500c2785c5207ace19650192629beba2728b/src/node-opus.cc#L47"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/discordjs/opus/releases/tag/v0.10.0"
     },
     {
       "type": "WEB",
