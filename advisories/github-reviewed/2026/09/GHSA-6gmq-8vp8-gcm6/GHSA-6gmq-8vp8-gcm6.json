@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6gmq-8vp8-gcm6",
-  "modified": "2026-09-02T15:18:20Z",
+  "modified": "2026-09-02T15:18:21Z",
   "published": "2026-09-02T15:18:20Z",
   "aliases": [
     "CVE-2026-83610"
