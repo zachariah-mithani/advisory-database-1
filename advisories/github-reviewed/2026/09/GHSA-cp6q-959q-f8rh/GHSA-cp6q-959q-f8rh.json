@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-cp6q-959q-f8rh",
-  "modified": "2026-09-02T14:44:39Z",
+  "modified": "2026-09-02T14:44:40Z",
   "published": "2026-09-02T14:44:39Z",
   "aliases": [],
   "summary": "Tiptap: mergeAttributes() turns an own __proto__ key into inherited executable DOM attributes",
@@ -23,10 +23,29 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "2.0.0-alpha.0"
+              "introduced": "3.0.0-next.0"
             },
             {
               "fixed": "3.30.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@tiptap/core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0-alpha.0"
+            },
+            {
+              "fixed": "2.27.3"
             }
           ]
         }
@@ -40,7 +59,15 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/ueberdosis/tiptap/pull/8309"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/ueberdosis/tiptap/commit/01d7af8c983ee5954c63734f4fa46cb23ae3246d"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/ueberdosis/tiptap/commit/fa6abcce65e58c60d40c7cdf59950d4f03ce83a4"
     },
     {
       "type": "PACKAGE",
