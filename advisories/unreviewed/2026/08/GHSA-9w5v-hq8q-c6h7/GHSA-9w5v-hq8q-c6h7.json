@@ -1,23 +1,105 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-9w5v-hq8q-c6h7",
-  "modified": "2026-08-27T21:31:42Z",
+  "modified": "2026-08-28T21:31:07Z",
   "published": "2026-08-27T21:31:42Z",
   "aliases": [
     "CVE-2026-59284"
   ],
-  "details": "There is no allow list for property keys when Spring Cloud Commons writable /actuator/env is enabled.\nSpring Cloud Commons 5.0.0 - 5.0.2\nSpring Cloud Commons 4.3.0 - 4.3.3\nSpring Cloud Commons 4.0.0 - 4.2.6\nSpring Cloud Commons 3.1.10 and earlier",
+  "summary": "no allow list for Spring Cloud Commons writable /actuator/env",
+  "details": "There is no allow list for property keys when Spring Cloud Commons writable /actuator/env is enabled.\n\nMitigation:\n\nBump to a fixed version and set `management.endpoint.env.post.valid-keys-regex` to a valid regular expression that only matches property keys that are allowed to be dynamically updated.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:L"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.cloud:spring-cloud-context"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": "5.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.cloud:spring-cloud-context"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.3.0"
+            },
+            {
+              "fixed": "4.3.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.cloud:spring-cloud-context"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.2.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.cloud:spring-cloud-context"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.11"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59284"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-cloud/spring-cloud-commons/commit/9c478a698466bb5fb2df38f5f6459af18bb54d54"
     },
     {
       "type": "WEB",
