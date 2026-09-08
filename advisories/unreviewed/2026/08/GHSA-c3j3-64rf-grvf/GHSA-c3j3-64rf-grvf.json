@@ -1,23 +1,65 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-c3j3-64rf-grvf",
-  "modified": "2026-08-22T15:31:02Z",
+  "modified": "2026-08-22T15:31:11Z",
   "published": "2026-08-22T15:31:02Z",
   "aliases": [
     "CVE-2026-62243"
   ],
+  "summary": "Netty hostname verification disabled on the OpenSSL client path when trust-manager wrapping is unavailable",
   "details": "Netty (io.netty:netty-handler) versions from 4.2.0.Final through 4.2.16.Final and versions through 4.1.136.Final disable TLS hostname verification on the SslProvider.OPENSSL client path when a plain (non-extended) X509TrustManager is used and Unsafe-based trust-manager wrapping is unavailable (Java 25+). In this configuration the OpenSSL client does not perform hostname verification, allowing a man-in-the-middle attacker to present a certificate issued for a different hostname that is accepted without validation. Fixed in 4.2.17.Final and 4.1.137.Final.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.netty:netty-handler"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.1.137.Final"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 4.1.136.Final"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.netty:netty-handler"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.2.0.Final"
+            },
+            {
+              "fixed": "4.2.17.Final"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 4.2.16.Final"
+      }
+    }
+  ],
   "references": [
     {
       "type": "WEB",
