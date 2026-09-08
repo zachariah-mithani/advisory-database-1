@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jx9q-477g-4wgw",
-  "modified": "2026-08-06T18:30:36Z",
+  "modified": "2026-08-06T18:31:37Z",
   "published": "2026-08-05T09:31:15Z",
   "aliases": [
     "CVE-2026-66276"
   ],
+  "summary": "Apache Qpid Proton-J unbounded disposition range handling can lead to denial of service",
   "details": "An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service.\n\nThis issue affects Apache Qpid Proton-J: through 0.34.1.\n\nUsers are recommended to upgrade to version 0.35.0, which fixes the issue.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.qpid:proton-j"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "0.35.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
