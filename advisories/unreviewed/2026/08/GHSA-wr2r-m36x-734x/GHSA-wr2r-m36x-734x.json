@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-wr2r-m36x-734x",
-  "modified": "2026-08-06T15:32:32Z",
+  "modified": "2026-08-06T15:33:35Z",
   "published": "2026-08-05T06:30:32Z",
   "aliases": [
     "CVE-2026-66273"
   ],
+  "summary": "Apache Qpid Proton-J type size/count handling can lead to excessive allocation pre-authentication",
   "details": "A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.\n\nThis issue affects Apache Qpid Proton-J: through 0.34.1.\n\nUsers are recommended to upgrade to version 0.35.0, which fixes the issue.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.qpid:proton-j"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "0.35.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
