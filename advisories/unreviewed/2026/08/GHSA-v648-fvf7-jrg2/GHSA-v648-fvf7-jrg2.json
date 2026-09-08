@@ -1,19 +1,119 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-v648-fvf7-jrg2",
-  "modified": "2026-08-27T21:31:50Z",
+  "modified": "2026-08-29T00:30:57Z",
   "published": "2026-08-27T21:31:49Z",
   "aliases": [
     "CVE-2026-59317"
   ],
-  "details": "DeadLetterPublishingRecovererFactory reads the retry_topic-original-timestamp header from an inbound ConsumerRecord and passes its raw bytes directly to new BigInteger(header.value()) with no length or format validation.\nSpring for Apache Kafka 4.1.0\nSpring for Apache Kafka 4.0.0 - 4.0.6\nSpring for Apache Kafka 3.0.0 - 3.3.16\nSpring for Apache Kafka 2.9.0 - 2.9.14\nSpring for Apache Kafka 2.8.12 and earlier",
+  "summary": "Spring for Apache Kafka @RetryableTopic runs infinitely on malformed header",
+  "details": "`DeadLetterPublishingRecovererFactory` reads the `retry_topic-original-timestamp` header from an inbound `ConsumerRecord` and passes its raw bytes directly to new `BigInteger(header.value())` with no length or format validation. A Kafka producer with write access to a topic consumed by a `@RetryableTopic` listener can attach a malformed header (e.g. a zero-length byte array), causing a `NumberFormatException` in the destination resolver during recovery. This aborts dead-letter publication, the error handler seeks back to the failed offset, and the cycle repeats indefinitely, stalling partition consumption.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.kafka:spring-kafka"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.1.0"
+            },
+            {
+              "fixed": "4.1.0.1"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "4.1.0"
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.kafka:spring-kafka"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.6.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.kafka:spring-kafka"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.3.17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.kafka:spring-kafka"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.9.0"
+            },
+            {
+              "fixed": "2.9.15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.kafka:spring-kafka"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.8.13"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
