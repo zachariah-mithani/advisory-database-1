@@ -1,19 +1,78 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jv7x-jjj5-pqwg",
-  "modified": "2026-09-01T21:31:26Z",
+  "modified": "2026-08-27T18:32:10Z",
   "published": "2026-08-27T06:31:34Z",
   "aliases": [
     "CVE-2026-47881"
   ],
-  "details": "Spring Batch's FlatFileItemReader supports files where a single logical record spans multiple physical lines — for example, a CSV field that contains embedded newlines wrapped in quotes. A specially crafted input file could exploit the way the reader assembles those multi-line records to consume excessive CPU time and memory, causing the batch job to stall or run out of memory.\nSpring Batch 6.0.0 - 6.0.4\nSpring Batch 5.2.0 - 5.2.6\nSpring Batch 4.3.0 - 4.3.13",
+  "summary": "Denial of Service in Spring Batch FlatFileItemReader via Malformed Input File",
+  "details": "Spring Batch's FlatFileItemReader supports files where a single logical record spans multiple physical lines — for example, a CSV field that contains embedded newlines wrapped in quotes. A specially crafted input file could exploit the way the reader assembles those multi-line records to consume excessive CPU time and memory, causing the batch job to stall or run out of memory.\n\nThis issue affects applications that use `DefaultRecordSeparatorPolicy` or `JsonRecordSeparatorPolicy`.\n\nThe default policy (`SimpleRecordSeparatorPolicy`) is not affected.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.batch:spring-batch-infrastructure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.0.0"
+            },
+            {
+              "fixed": "6.0.4.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.batch:spring-batch-infrastructure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.2.0"
+            },
+            {
+              "fixed": "5.2.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.batch:spring-batch-infrastructure"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.3.0"
+            },
+            {
+              "fixed": "4.3.14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
