@@ -1,19 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-hvpf-8px2-f567",
-  "modified": "2026-04-09T18:31:26Z",
+  "modified": "2026-04-09T18:32:30Z",
   "published": "2026-04-09T15:35:07Z",
   "aliases": [
     "CVE-2025-45806"
   ],
-  "details": "A cross-site scripting (XSS) vulnerability in rrweb-snapshot before v2.0.0-alpha.18 allows attackers to execute arbitrary web scripts or HTML via a crafted payload.",
+  "summary": "rrweb-snapshot may execute scripts when rebuilding untrusted snapshots",
+  "details": "`rrweb-snapshot` versions from 1.0.0 before 2.0.0 may execute attacker-controlled JavaScript when `rebuild()` reconstructs a crafted snapshot into an unprotected browser document. This can affect applications that replay untrusted or attacker-controlled rrweb data.\n\nVersion 2.0.0 contains the fix from rrweb-io/rrweb#1834. Browser rebuilds now require a sandboxed iframe document created by `rebuildIntoSandboxedIframe()` or `createSandboxedIframe()` by default. Applications can explicitly opt out with `UNSAFE_allowUnprotectedRebuild: true` only when they accept the script-execution risk.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "rrweb-snapshot"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "2.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -25,11 +46,19 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/rrweb-io/rrweb"
+      "url": "https://github.com/rrweb-io/rrweb/pull/1834"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/rrweb-io/rrweb/blob/main/packages/rrweb-snapshot/src/rebuild.ts"
     },
     {
       "type": "WEB",
-      "url": "https://github.com/rrweb-io/rrweb/tree/master/packages/rrweb-snapshot"
+      "url": "https://github.com/rrweb-io/rrweb/releases/tag/rrweb-snapshot%402.0.0"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/rrweb-io/rrweb/tree/main/packages/rrweb-snapshot"
     }
   ],
   "database_specific": {
