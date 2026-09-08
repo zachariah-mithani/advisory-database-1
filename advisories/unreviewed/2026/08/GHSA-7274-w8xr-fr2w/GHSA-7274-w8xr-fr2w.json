@@ -1,19 +1,138 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7274-w8xr-fr2w",
-  "modified": "2026-08-26T21:31:43Z",
+  "modified": "2026-09-04T21:31:40Z",
   "published": "2026-08-26T21:31:43Z",
   "aliases": [
     "CVE-2026-47842"
   ],
-  "details": "Applications using AesBytesEncryptor with the two-argument constructor or when passing a null IV generator and CBC as the encryption mode encrypt data with AES/CBC using a null (all-zero) initialization vector.\nSpring Security 7.1.0\nSpring Security 7.0.0 - 7.0.6\nSpring Security 6.5.0 - 6.5.11\nSpring Security 6.4.0 - 6.4.18\nSpring Security 5.8.0 - 5.8.27\nSpring Security 5.7.0 - 5.7.25",
+  "summary": "Deterministic AES/CBC Encryption in Spring Security AesBytesEncryptor Allows Ciphertext Correlation",
+  "details": "Applications using AesBytesEncryptor with the two-argument constructor or when passing a null IV generator and CBC as the encryption mode encrypt data with AES/CBC using a null (all-zero) initialization vector. Because the IV is fixed, identical plaintexts always produce identical ciphertext for a given password and salt, regardless of when or how many times the value was encrypted.\n\nAn attacker with read access to the encrypted data store can exploit this property to determine when two records share the same plaintext value, correlate encrypted values across rows or users, and mount dictionary attacks by pre-encrypting candidate values and comparing the results.\n\nMigration guide: https://spring.io/security/cve-2026-47842#migration",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.1.0"
+            },
+            {
+              "fixed": "7.1.0.1"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "7.1.0"
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.0.6.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.5.0"
+            },
+            {
+              "fixed": "6.5.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.4.0"
+            },
+            {
+              "fixed": "6.4.19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.8.0"
+            },
+            {
+              "fixed": "5.8.28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework.security:spring-security-crypto"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.7.0"
+            },
+            {
+              "fixed": "5.7.26"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
