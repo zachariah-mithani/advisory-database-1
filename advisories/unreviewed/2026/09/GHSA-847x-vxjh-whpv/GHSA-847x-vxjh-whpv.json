@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-847x-vxjh-whpv",
-  "modified": "2026-09-07T18:31:32Z",
+  "modified": "2026-09-07T18:31:38Z",
   "published": "2026-09-07T18:31:32Z",
   "aliases": [
     "CVE-2026-86469"
   ],
+  "summary": "Improve this advisory",
   "details": "A flaw was found in GLib2. When g_file_replace() is used with G_FILE_CREATE_REPLACE_DESTINATION and creating the .goutputstream-XXXXXX temporary file fails, the library unlinks the destination and recreates it without exclusive creation or symlink protection. A local attacker who can write to the destination directory can win that race and redirect the write to another file.",
   "severity": [
     {
@@ -13,7 +14,24 @@
       "score": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:L"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
