@@ -6,18 +6,138 @@
   "aliases": [
     "CVE-2026-59283"
   ],
-  "details": "Applications that evaluate Spring Expression Language (SpEL) expressions using SimpleEvaluationContext may be vulnerable to a safety guard bypass when the SpEL expression compiler is active.\nSpring Framework 7.0.0 - 7.0.8\nSpring Framework 6.2.0 - 6.2.19\nSpring Framework 6.1.0 - 6.1.28\nSpring Framework 6.0.0 - 6.0.30\nSpring Framework 5.3.0 - 5.3.49\nSpring Framework 5.2.25.RELEASE and earlier",
+  "summary": "Spring Framework Safety Guard Bypass via SpEL Expression Compilation",
+  "details": "Applications that evaluate Spring Expression Language (SpEL) expressions using `SimpleEvaluationContext` may be vulnerable to a safety guard bypass when the SpEL expression compiler is active.\n\nSpecifically, an application is vulnerable when all of the following conditions are met:\n\n* The application evaluates SpEL expressions using `SimpleEvaluationContext`.\n* The SpEL expression compiler is active, either because the `spring.expression.compiler.mode` system property or Spring property has been set to `IMMEDIATE` or `MIXED`, or because a `SpelParserConfiguration` with `SpelCompilerMode` set to `IMMEDIATE` or `MIXED` was used to create the `SpelExpressionParser`.\n\nWhen all conditions are met, the SpEL compiler can silently compile expressions evaluated within a `SimpleEvaluationContext`, causing subsequent evaluations to bypass all safety guards that are enforced during interpreted evaluation. The compiler may also cause unbounded class-loading growth, as each distinct compilable expression results in a new class being generated and loaded into a child `ClassLoader`.\n\nUpgrading notes\n\nFixed versions of Spring Framework ensure that `SimpleEvaluationContext` does not support expression compilation by default, regardless of the compiler mode configured via `SpelParserConfiguration` or the `spring.expression.compiler.mode` system property or Spring property. Applications that intentionally use `SimpleEvaluationContext` with trusted expressions and require compilation for performance reasons can opt in by calling `withCompilationSupported()` on the `SimpleEvaluationContext` builder. Care should be taken when opting in to compilation, as doing so removes the safety guards applied during interpreted evaluation.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.0.8.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.2.0"
+            },
+            {
+              "fixed": "6.2.20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.1.0"
+            },
+            {
+              "fixed": "6.1.29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.0.0"
+            },
+            {
+              "fixed": "6.0.31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.3.0"
+            },
+            {
+              "fixed": "5.3.50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-expression"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "5.2.26"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59283"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-framework/issues/37035"
     },
     {
       "type": "WEB",
