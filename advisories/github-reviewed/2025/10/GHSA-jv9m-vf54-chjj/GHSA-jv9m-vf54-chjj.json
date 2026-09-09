@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jv9m-vf54-chjj",
-  "modified": "2025-11-15T03:13:52Z",
+  "modified": "2025-11-15T03:13:53Z",
   "published": "2025-10-09T15:21:39Z",
   "aliases": [
     "CVE-2025-61913"
@@ -52,28 +52,6 @@
           ]
         }
       ]
-    },
-    {
-      "package": {
-        "ecosystem": "npm",
-        "name": "Flowise"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "0"
-            },
-            {
-              "fixed": "3.0.8"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 3.0.5"
-      }
     }
   ],
   "references": [
