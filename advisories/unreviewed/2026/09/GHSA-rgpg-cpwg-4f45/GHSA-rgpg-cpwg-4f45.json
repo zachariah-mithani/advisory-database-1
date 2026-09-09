@@ -1,19 +1,43 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rgpg-cpwg-4f45",
-  "modified": "2026-09-04T12:31:00Z",
+  "modified": "2026-09-04T12:31:06Z",
   "published": "2026-09-04T12:31:00Z",
   "aliases": [
     "CVE-2026-85596"
   ],
-  "details": "Traefik versions >= v3.7.0 and <= v3.7.10 contain an authentication bypass in the Kubernetes Ingress NGINX provider. The TLS option generated for an Ingress carrying the nginx.ingress.kubernetes.io/auth-tls-secret annotation was named after the Ingress namespace and name. As a result, two Ingress objects sharing the same host, the same client CA secret, and the same client-authentication mode produced two distinct TLS option names for that host. Traefik treats this as a TLS options conflict and falls back to the entry point's default TLS configuration, which does not request a client certificate, so a route configured with nginx.ingress.kubernetes.io/auth-tls-verify-client: \"on\" becomes reachable without a client certificate. Only the v3.7 line is affected; the issue is fixed in v3.7.11.",
+  "summary": "Traefik Kubernetes Ingress NGINX Provider mTLS Authentication Bypass via TLS Option Conflict",
+  "details": "### Relationship to CVE-2026-85597\n\nThis issue is related to, but distinct from, CVE-2026-85597 (GHSA-g55h-rg46-x9c5).\n\nCVE-2026-85596 specifically affects the Kubernetes Ingress NGINX provider in Traefik v3.7.0 through v3.7.10, where generated TLS option names can conflict for Ingress objects sharing the same host.\n\nCVE-2026-85597 concerns the broader TLS option conflict resolution behavior in Traefik and also affects other versions, including the v2 line.\n\nBoth issues were addressed in Traefik v3.7.11.",
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/traefik/traefik/v3"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.7.0"
+            },
+            {
+              "fixed": "3.7.11"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.7.10"
+      }
+    }
+  ],
   "references": [
     {
       "type": "WEB",
