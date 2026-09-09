@@ -1,23 +1,86 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-p9xf-3946-vr35",
-  "modified": "2026-08-27T03:32:58Z",
+  "modified": "2026-08-27T18:32:07Z",
   "published": "2026-08-27T03:32:58Z",
   "aliases": [
     "CVE-2026-47857"
   ],
-  "details": "In Reactor Core, applications that use the Flux.windowTimeout operator with fairBackpressure enabled are vulnerable to a Denial of Service (DoS) condition.\nReactor Core 3.8.0 - 3.8.6\nReactor Core 3.5.0 - 3.7.19\nReactor Core 3.4.41 and earlier",
+  "summary": "Reactor Core windowTimeout fairBackpressure DoS",
+  "details": "In Reactor Core, applications that use the Flux.windowTimeout operator with fairBackpressure enabled are vulnerable to a Denial of Service (DoS) condition.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.projectreactor:reactor-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.8.0"
+            },
+            {
+              "fixed": "3.8.6.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.projectreactor:reactor-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.5.0"
+            },
+            {
+              "fixed": "3.7.20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "io.projectreactor:reactor-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.4.42"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47857"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/reactor/reactor-core/commit/9fdb2cf7108d738fe80e65d010571982610b7eb8"
     },
     {
       "type": "WEB",
