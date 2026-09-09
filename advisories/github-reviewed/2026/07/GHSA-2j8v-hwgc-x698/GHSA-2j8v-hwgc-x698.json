@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-2j8v-hwgc-x698",
-  "modified": "2026-07-02T15:57:49Z",
+  "modified": "2026-07-02T15:57:50Z",
   "published": "2026-07-02T15:57:49Z",
   "aliases": [],
   "summary": "OpenClaw: Shell wrapper argv could change between approval and execution",
@@ -16,7 +16,7 @@
     {
       "package": {
         "ecosystem": "npm",
-        "name": "Openclaw"
+        "name": "openclaw"
       },
       "ranges": [
         {
