@@ -6,14 +6,130 @@
   "aliases": [
     "CVE-2026-59282"
   ],
-  "details": "Spring Framework applications that use Spring's data binding infrastructure to apply user-supplied property paths onto a target object may be vulnerable to a Denial of Service (DoS) attack.\nSpring Framework 7.0.0 - 7.0.8\nSpring Framework 6.2.0 - 6.2.19\nSpring Framework 6.1.0 - 6.1.28\nSpring Framework 6.0.0 - 6.0.30\nSpring Framework 5.3.0 - 5.3.49\nSpring Framework 5.2.25.RELEASE and earlier",
+  "summary": "Spring Framework Denial of Service via Unbounded List Growth in Data Binding",
+  "details": "Spring Framework applications that use Spring's data binding infrastructure to apply user-supplied property paths onto a target object may be vulnerable to a Denial of Service (DoS) attack.\n\nSpring Framework's property binding infrastructure traverses nested property paths by calling `list.get(index)` to navigate into list elements. This call is made without verifying that the index falls within the list's current bounds after the configured `autoGrowCollectionLimit` check prevents further growth. For standard `List` implementations this is safe, as an out-of-range `get()` throws `IndexOutOfBoundsException`. However, a `List` implementation whose `get()` method allocates elements on demand rather than throwing `IndexOutOfBoundsException` may be caused to perform unbounded allocation.\n\nSpecifically, an application is vulnerable when all of the following conditions are met:\n\n* The application uses Spring's data binding infrastructure (e.g., `DataBinder`, `BeanWrapper`, or `DirectFieldAccessor`) to apply user-supplied property paths onto a target object.\n* The target object contains a self-populating List implementation as a property.\n* The list's element type exposes sub-properties (i.e., it is not a simple scalar type).\n\nWhen all conditions are met, an attacker can supply a property path with an arbitrarily large index into a nested sub-property, causing the list to allocate an unbounded number of elements, exhausting heap memory and potentially resulting in Denial of Service.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.0.8.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.2.0"
+            },
+            {
+              "fixed": "6.2.20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.1.0"
+            },
+            {
+              "fixed": "6.1.29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.0.0"
+            },
+            {
+              "fixed": "6.0.31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.3.0"
+            },
+            {
+              "fixed": "5.3.50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-beans"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "5.2.26"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
