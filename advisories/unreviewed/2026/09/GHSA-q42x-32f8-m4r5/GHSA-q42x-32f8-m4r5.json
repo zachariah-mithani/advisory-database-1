@@ -1,19 +1,62 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q42x-32f8-m4r5",
-  "modified": "2026-09-04T12:31:00Z",
+  "modified": "2026-09-04T12:31:06Z",
   "published": "2026-09-04T12:31:00Z",
   "aliases": [
     "CVE-2026-85597"
   ],
-  "details": "Traefik before v2.11.55 contains a TLS option conflict resolution vulnerability that allows unauthenticated attackers to bypass client-certificate authentication by creating conflicting TLS options on multi-host routers. Attackers can reach protected backends by exploiting shared TLS resolution across multiple hostnames in a single router rule, causing the strict mTLS requirement to fall back to default options for all hosts.",
+  "summary": "Traefik mTLS Bypass via TLS Option Conflict",
+  "details": "### Affected version metadata inconsistency\n\nThe published CVE-2026-85597 metadata contains an inconsistency in the affected version range.\n\nThe affected versions section lists Traefik v3.0.0 through v3.7.10 as affected, while the CPE applicability lists versions through v3.7.12.\n\nIt is therefore unclear from the current CVE metadata whether v3.7.11 and v3.7.12 should be considered affected. This discrepancy should be reviewed and the affected version metadata corrected accordingly.",
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/traefik/traefik/v2"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.11.55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/traefik/traefik/v3"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.7.11"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.7.10"
+      }
+    }
+  ],
   "references": [
     {
       "type": "WEB",
