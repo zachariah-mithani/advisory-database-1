@@ -6,6 +6,7 @@
   "aliases": [
     "CVE-2022-26579"
   ],
+  "summary": "ayi007",
   "details": "PAX Technology A930 PayDroid 7.1.1 Virgo V04.4.02 20211201 allows root privileged attackers to install an unsigned application by copying the APK to /data/app, setting the appropriate permissions and rebooting the device.",
   "severity": [
     {
@@ -13,7 +14,24 @@
       "score": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
