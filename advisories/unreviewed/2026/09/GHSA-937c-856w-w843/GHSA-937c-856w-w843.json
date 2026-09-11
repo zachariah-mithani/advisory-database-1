@@ -1,19 +1,37 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-937c-856w-w843",
-  "modified": "2026-09-11T03:30:24Z",
+  "modified": "2026-09-11T03:30:30Z",
   "published": "2026-09-11T03:30:24Z",
   "aliases": [
     "CVE-2026-78135"
   ],
+  "summary": "اليمن",
   "details": "libcharon in strongSwan 5.9.7 through 6.0.7 mishandles behavioral workflow in the IKEv2 state machine. Because CREATE_CHILD_SA requests are mishandled, there can be an authentication bypass.",
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+      "score": "CVSS:3.1/AV:P/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
