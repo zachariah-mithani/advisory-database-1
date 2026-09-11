@@ -1,23 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-mwq5-v3w5-qr6v",
-  "modified": "2026-09-09T15:35:16Z",
+  "modified": "2026-09-09T15:35:22Z",
   "published": "2026-09-09T15:35:16Z",
   "aliases": [
     "CVE-2026-87877"
   ],
+  "summary": "Use-After-Free via Missing Closed-State Check on setDict/setLongMax/setLevel",
   "details": "zstd-jni versions before 1.5.7-14 fail to validate closed state in setDict, setLongMax, setLevel and setRefMultipleDDicts methods of stream classes. Attackers can call these methods on closed streams to write through freed native pointers, corrupting unrelated objects or crashing the JVM.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "com.github.luben:zstd-jni"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.7-14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "WEB",
