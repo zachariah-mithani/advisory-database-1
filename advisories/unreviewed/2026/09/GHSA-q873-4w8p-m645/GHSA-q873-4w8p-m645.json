@@ -1,27 +1,83 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q873-4w8p-m645",
-  "modified": "2026-09-10T21:31:39Z",
+  "modified": "2026-09-10T21:31:46Z",
   "published": "2026-09-10T21:31:39Z",
   "aliases": [
     "CVE-2026-89094"
   ],
-  "details": "Forgejo before 16.0.4 allows remote code execution via a crafted template repository because template expansion on files in .forgejo/template is mishandled.",
+  "summary": "Forgejo template filename expansion can recreate .git and lead to remote code execution",
+  "details": "Forgejo before 16.0.4 and 15.0.8 allow remote code execution via a crafted template repository because template expansion on files in .forgejo/template is mishandled.\n\nWhen generating a new repository from a template repository, Forgejo clones the template repository, removes the `.git` folder, performs variable template expansion on files listed in `.forgejo/template`, and initializes a new git repository. During this process, variable template expansion could be misused in order to create a new `.git` folder, which git would adopt and incorporate during its initialization of a new git repository. A malicious template repository could be used to read arbitrary data from the Forgejo host, and to execute arbitrary processes on the Forgejo host, as a remote code execution attack.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "codeberg.org/forgejo/forgejo"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "15.0.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "codeberg.org/forgejo/forgejo"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "16.0.0"
+            },
+            {
+              "fixed": "16.0.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89094"
     },
     {
+      "type": "PACKAGE",
+      "url": "https://codeberg.org/Forgejo/forgejo"
+    },
+    {
+      "type": "WEB",
+      "url": "https://codeberg.org/forgejo/forgejo/milestone/139652"
+    },
+    {
       "type": "WEB",
       "url": "https://codeberg.org/forgejo/forgejo/milestone/139655"
+    },
+    {
+      "type": "WEB",
+      "url": "https://codeberg.org/forgejo/forgejo/pulls/14301"
+    },
+    {
+      "type": "WEB",
+      "url": "https://codeberg.org/forgejo/forgejo/pulls/14302"
     },
     {
       "type": "WEB",
