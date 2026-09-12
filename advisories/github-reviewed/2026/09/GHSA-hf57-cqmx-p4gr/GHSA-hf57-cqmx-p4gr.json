@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-hf57-cqmx-p4gr",
-  "modified": "2026-09-10T21:22:12Z",
+  "modified": "2026-09-10T21:22:13Z",
   "published": "2026-09-10T21:22:12Z",
   "aliases": [
     "CVE-2026-88062"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "3.8.50"
+              "fixed": "3.8.50"
             }
           ]
         }
@@ -51,6 +51,14 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/diegosouzapw/OmniRoute"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/diegosouzapw/OmniRoute/blob/v3.8.50/src/lib/acp/registry.ts#L204-L315"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/diegosouzapw/OmniRoute/releases/tag/v3.8.50"
     }
   ],
   "database_specific": {
