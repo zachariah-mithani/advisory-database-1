@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-325j-mg25-8q58",
-  "modified": "2026-09-11T22:11:38Z",
+  "modified": "2026-09-11T22:11:40Z",
   "published": "2026-09-11T22:11:38Z",
   "aliases": [
     "CVE-2026-61534"
@@ -44,8 +44,16 @@
       "url": "https://github.com/confetti/yayson/security/advisories/GHSA-325j-mg25-8q58"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/confetti/yayson/commit/e460162d5a3ebac86424bead7424957c36f8dff9"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/confetti/yayson"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/confetti/yayson/releases/tag/v4.3.0"
     }
   ],
   "database_specific": {
