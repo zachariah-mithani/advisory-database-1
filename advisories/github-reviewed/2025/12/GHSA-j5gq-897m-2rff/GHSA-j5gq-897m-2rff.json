@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-j5gq-897m-2rff",
-  "modified": "2025-12-10T21:31:52Z",
+  "modified": "2026-09-15T11:05:12Z",
   "published": "2025-12-10T21:31:52Z",
   "aliases": [
     "CVE-2025-67505"
   ],
   "summary": "Race condition in the Okta Java SDK",
-  "details": "### Description\nIn the Okta Java SDK, race conditions may arise from concurrent requests using the ApiClient class. This could cause a status code or response header from one request’s response to influence another request’s response.\n\n\n### Affected product and versions\nYou may be affected if you meet the following preconditions:\n- Using the Okta Java SDK between versions 11.0.0 and 20.0.0, and\n- Implementing a multithreaded application with the ApiClient class where the response status code is used in access control flows\n\n### Resolution\nUpgrade Okta/okta-sdk-java to versions 21.0.0  or greater.",
+  "details": "### Description\n\nThe Okta Java SDK's `ApiClient` class keeps the status code and response headers of the last response as shared state in the client instance, which may be read via `getStatusCode()`, `getResponseHeaders()`, or `PaginationUtil.getAfter()`. When a client instance is shared across threads, or other requests made on it before these values are read in a single thread, the caller may observe another request's status code and headers. As a result, decisions may be based on the wrong status code, and paginated listings may silently skip, duplicate, or omit results. Since such listings commonly back access-control decisions, such as group membership, app assignments, or deprovisioning, this can lead to access being incorrectly granted or not revoked.\n\n### Affected product and versions\n\nYou may be affected if you use `com.okta.sdk:okta-sdk-root` >= 11.0.0 and read the status code or response headers from `ApiClient` after a call, directly or through `PaginationUtil`.\n\n### Resolution\n\nUpgrade to 24.0.1 or later and migrate to the stateless API: the generated\n`*Paged()` methods / `PagedIterable` for pagination, and `invokeAPIWithHttpInfo()`\nfor status codes and headers. The deprecated methods above remain unsafe to use\nwith shared or pooled `ApiClient` instances.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -28,33 +28,36 @@
               "introduced": "11.0.0"
             },
             {
-              "fixed": "20.0.1"
+              "fixed": "24.0.1"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 20.0.0"
-      }
+      ]
     }
   ],
   "references": [
     {
       "type": "WEB",
-      "url": "https://github.com/okta/okta-sdk-java/security/advisories/GHSA-j5gq-897m-2rff"
+      "url": "https://github.com/okta/okta-sdk-java/issues/1525"
     },
     {
       "type": "WEB",
-      "url": "https://github.com/okta/okta-sdk-java/commit/abf4f128a0441f90cb7efcdcf4bde1aef8703243"
+      "url": "https://github.com/okta/okta-sdk-java/commit/1daa9229a70fc38fb252aeaa637f82d0b0729b3f"
     },
     {
       "type": "PACKAGE",
       "url": "https://github.com/okta/okta-sdk-java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/okta/okta-sdk-java/releases/tag/okta-sdk-root-24.0.1"
     }
   ],
   "database_specific": {
     "cwe_ids": [
-      "CWE-362"
+      "CWE-362",
+      "CWE-488",
+      "CWE-567"
     ],
     "severity": "HIGH",
     "github_reviewed": true,
