@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fcch-9ph8-q3p4",
-  "modified": "2026-05-15T21:31:31Z",
+  "modified": "2026-05-15T21:32:43Z",
   "published": "2026-05-12T18:30:40Z",
   "aliases": [
     "CVE-2026-31231"
   ],
+  "summary": "Cognee notebook cell execution endpoint passes request bodies to exec(), allowing remote code execution",
   "details": "Cognee thru v0.4.0 contains a critical remote code execution vulnerability in its notebook cell execution API endpoint. The endpoint is designed to execute arbitrary Python code provided by the user, but it does so using the unsafe exec() function without any sandboxing, validation, or security controls. An attacker can exploit this by sending a specially crafted POST request containing malicious Python code to the execution endpoint. This leads to arbitrary code execution on the Cognee server with the privileges of the server process, allowing complete compromise of the system.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "cognee"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
