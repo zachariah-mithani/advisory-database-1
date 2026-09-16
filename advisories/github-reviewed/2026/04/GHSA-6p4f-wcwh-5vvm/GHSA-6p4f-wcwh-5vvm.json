@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -40,7 +40,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -62,7 +62,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -81,89 +81,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "0"
-            },
-            {
-              "last_affected": "5.3.47"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "7.0.0"
-            },
-            {
-              "fixed": "7.0.7"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 7.0.6"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "6.2.0"
-            },
-            {
-              "fixed": "6.2.18"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 6.2.17"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "6.1.0"
-            },
-            {
-              "last_affected": "6.1.26"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
