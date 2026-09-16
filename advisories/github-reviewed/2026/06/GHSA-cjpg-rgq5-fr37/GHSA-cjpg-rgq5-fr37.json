@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-cjpg-rgq5-fr37",
-  "modified": "2026-07-30T18:33:27Z",
+  "modified": "2026-07-30T18:33:28Z",
   "published": "2026-06-09T06:31:58Z",
   "aliases": [
     "CVE-2026-41853"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -40,29 +40,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "7.0.0"
-            },
-            {
-              "fixed": "7.0.8"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 7.0.7"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -84,29 +62,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "6.2.0"
-            },
-            {
-              "fixed": "6.2.19"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 6.2.18"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
@@ -125,45 +81,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "6.1.0"
-            },
-            {
-              "last_affected": "6.1.21"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webmvc"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "0"
-            },
-            {
-              "last_affected": "5.3.39"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.springframework:spring-webflux"
+        "name": "org.springframework:spring-core"
       },
       "ranges": [
         {
