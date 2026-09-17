@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7p3p-8qv8-m2vh",
-  "modified": "2026-07-22T22:56:43Z",
+  "modified": "2026-07-22T22:56:44Z",
   "published": "2026-07-22T22:56:43Z",
   "aliases": [
     "CVE-2026-6790"
@@ -28,11 +28,14 @@
               "introduced": "9.4.0.v20161208"
             },
             {
-              "last_affected": "9.4.58.v20250814"
+              "fixed": "9.4.61"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 9.4.60"
+      }
     },
     {
       "package": {
@@ -47,11 +50,14 @@
               "introduced": "10.0.0"
             },
             {
-              "last_affected": "10.0.26"
+              "fixed": "10.0.29"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 10.0.28"
+      }
     },
     {
       "package": {
@@ -66,11 +72,14 @@
               "introduced": "11.0.0"
             },
             {
-              "last_affected": "11.0.26"
+              "fixed": "11.0.29"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 11.0.28"
+      }
     },
     {
       "package": {
