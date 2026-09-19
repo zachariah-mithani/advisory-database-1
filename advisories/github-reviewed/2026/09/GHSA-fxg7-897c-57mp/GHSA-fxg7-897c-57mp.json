@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fxg7-897c-57mp",
-  "modified": "2026-09-09T23:47:44Z",
+  "modified": "2026-09-09T23:47:46Z",
   "published": "2026-09-09T23:47:44Z",
   "aliases": [
     "CVE-2026-59158"
@@ -41,8 +41,16 @@
       "url": "https://github.com/thoda-dev/nuxt-ollama/security/advisories/GHSA-fxg7-897c-57mp"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/thoda-dev/nuxt-ollama/commit/156e813783ef322ee10dbbdd6bf446a449e1a04f"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/thoda-dev/nuxt-ollama"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/thoda-dev/nuxt-ollama/releases/tag/v1.3.1"
     }
   ],
   "database_specific": {
