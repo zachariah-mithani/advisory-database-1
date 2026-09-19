@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rh9f-gr6q-mpc4",
-  "modified": "2025-08-20T19:02:52Z",
+  "modified": "2025-08-20T19:02:53Z",
   "published": "2025-08-19T15:31:29Z",
   "aliases": [
     "CVE-2025-51488"
@@ -28,14 +28,11 @@
               "introduced": "0"
             },
             {
-              "fixed": "3.12.14"
+              "fixed": "3.12.4"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 3.12.4"
-      }
+      ]
     }
   ],
   "references": [
