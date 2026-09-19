@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-3vx7-xff6-h2vx",
-  "modified": "2024-05-14T20:53:49Z",
+  "modified": "2024-05-14T20:53:51Z",
   "published": "2022-05-14T01:58:45Z",
   "aliases": [
     "CVE-2015-3241"
@@ -23,14 +23,11 @@
               "introduced": "0"
             },
             {
-              "fixed": "112.0.0.0b3"
+              "fixed": "12.0.0.0b3"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 12.0.0.0b3"
-      }
+      ]
     }
   ],
   "references": [
