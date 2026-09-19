@@ -7,7 +7,7 @@
     "CVE-2026-40155"
   ],
   "summary": "Auth0 Next.js SDK has Improper Proxy Cache Lookup",
-  "details": "### Description\nIn affected versions of the Next.js SDK, simultaneous requests that trigger a nonce retry may cause the proxy cache fetcher to perform improper lookups for the token request results.\n\n### Which Projects are Affected?\nUsers are affected if they meet all of the following preconditions:\n- Applications using the auth0/nextjs-auth0 SDK, versions versions 4.12.0 to 4.17.1, and\n- Applications using the proxy handler  /me/* and /my-org/* with DPoP enabled.\n\n\n### Affected product and versions\nAuth0/nextjs-auth0 v4.12.0 to 4.17.1\n\n### Resolution\nUpgrade Auth0/nextjs-auth0 version to v4.18.0 or greater\n\n### Acknowledgements\nOkta would like to thank Reynaldo Immanuel for their discovery and responsible disclosure.",
+  "details": "### Description\nIn affected versions of the Next.js SDK, simultaneous requests that trigger a nonce retry may cause the proxy cache fetcher to perform improper lookups for the token request results.\n\n### Which Projects are Affected?\nUsers are affected if they meet all of the following preconditions:\n- Applications using the auth0/nextjs-auth0 SDK, versions 4.12.0 to 4.17.1, and\n- Applications using the proxy handler  /me/* and /my-org/* with DPoP enabled.\n\n\n### Affected product and versions\nAuth0/nextjs-auth0 v4.12.0 to 4.17.1\n\n### Resolution\nUpgrade Auth0/nextjs-auth0 version to v4.18.0 or greater\n\n### Acknowledgements\nOkta would like to thank Reynaldo Immanuel for their discovery and responsible disclosure.",
   "severity": [
     {
       "type": "CVSS_V3",
