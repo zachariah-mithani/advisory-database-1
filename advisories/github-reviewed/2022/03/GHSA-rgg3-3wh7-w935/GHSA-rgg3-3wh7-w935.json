@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rgg3-3wh7-w935",
-  "modified": "2022-03-28T22:21:50Z",
+  "modified": "2023-01-27T05:00:43Z",
   "published": "2022-03-15T00:00:58Z",
   "aliases": [
     "CVE-2021-42171"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "fixed": "9.0.55143"
+              "fixed": "9.0.55141"
             }
           ]
         }
