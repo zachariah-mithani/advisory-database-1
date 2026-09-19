@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-984m-rj28-8c6x",
-  "modified": "2024-10-18T21:43:36Z",
+  "modified": "2024-10-18T21:43:38Z",
   "published": "2022-05-17T00:35:46Z",
   "aliases": [
     "CVE-2015-7315"
@@ -9,10 +9,6 @@
   "summary": "Plone unauthorized member addition vulnerability",
   "details": "Plone 3.3.0 through 3.3.6, 4.0.0 through 4.0.10, 4.1.0 through 4.1.6, 4.2.0 through 4.2.7, 4.3.0 through 4.3.6, and 5.0rc1 allows remote attackers to add a new member to a Plone site with registration enabled, without acknowledgment of site administrator.",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N"
@@ -36,10 +32,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 4.3.6"
-      }
+      ]
     },
     {
       "package": {
