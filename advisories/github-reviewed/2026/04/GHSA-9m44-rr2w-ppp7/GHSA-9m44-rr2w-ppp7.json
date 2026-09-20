@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-9m44-rr2w-ppp7",
-  "modified": "2026-04-03T03:39:38Z",
+  "modified": "2026-04-03T03:39:42Z",
   "published": "2026-04-03T03:39:38Z",
   "aliases": [
     "CVE-2026-28815"
@@ -46,6 +46,10 @@
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28815"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/apple/swift-crypto/commit/bb4ba815dab96d4edc1e0b86d7b9acf9ff973a84"
     },
     {
       "type": "PACKAGE",
