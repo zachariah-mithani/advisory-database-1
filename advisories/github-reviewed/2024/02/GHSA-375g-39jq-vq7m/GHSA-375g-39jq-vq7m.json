@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-375g-39jq-vq7m",
-  "modified": "2025-01-14T15:59:39Z",
+  "modified": "2026-03-16T05:03:47Z",
   "published": "2024-02-21T00:09:03Z",
   "aliases": [
     "CVE-2024-26134"
@@ -50,11 +50,11 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/agronholm/cbor2/commit/387755eacf0be35591a478d3c67fe10618a6d542"
+      "url": "https://github.com/agronholm/cbor2/commit/0423e46808e95ad983edca9d8cdbd97cfc8eba87"
     },
     {
       "type": "WEB",
-      "url": "https://github.com/agronholm/cbor2/commit/4de6991ba29bf2290d7b9d83525eda7d021873df"
+      "url": "https://github.com/agronholm/cbor2/commit/387755eacf0be35591a478d3c67fe10618a6d542"
     },
     {
       "type": "PACKAGE",
