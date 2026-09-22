@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-c27r-x354-4m68",
-  "modified": "2022-08-02T20:03:05Z",
+  "modified": "2023-01-11T05:08:11Z",
   "published": "2020-10-27T20:39:46Z",
   "aliases": [],
   "summary": "xml-crypto's HMAC-SHA1 signatures can bypass validation via key confusion",
@@ -25,10 +25,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 1.5.3"
-      }
+      ]
     }
   ],
   "references": [
