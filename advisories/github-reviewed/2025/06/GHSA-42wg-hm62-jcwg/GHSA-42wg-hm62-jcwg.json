@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-42wg-hm62-jcwg",
-  "modified": "2025-10-29T16:05:26Z",
+  "modified": "2025-10-29T16:05:27Z",
   "published": "2025-06-16T15:32:28Z",
   "aliases": [
     "CVE-2025-49124"
@@ -11,176 +11,21 @@
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:L/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U"
+      "score": "CVSS:4.0/AV:L/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.apache.tomcat.embed:tomcat-embed-core"
+        "name": ""
       },
       "ranges": [
         {
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "11.0.0-M1"
-            },
-            {
-              "fixed": "11.0.8"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat.embed:tomcat-embed-core"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "10.1.0"
-            },
-            {
-              "fixed": "10.1.42"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat.embed:tomcat-embed-core"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "9.0.23"
-            },
-            {
-              "fixed": "9.0.106"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "11.0.0-M1"
-            },
-            {
-              "fixed": "11.0.8"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "10.1.0"
-            },
-            {
-              "fixed": "10.1.42"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "9.0.23"
-            },
-            {
-              "fixed": "9.0.106"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat-catalina"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "11.0.0-M1"
-            },
-            {
-              "fixed": "11.0.8"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat-catalina"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "10.1.0"
-            },
-            {
-              "fixed": "10.1.42"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.tomcat:tomcat-catalina"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "9.0.23"
-            },
-            {
-              "fixed": "9.0.106"
+              "introduced": "0"
             }
           ]
         }
@@ -233,7 +78,7 @@
     "cwe_ids": [
       "CWE-426"
     ],
-    "severity": "MODERATE",
+    "severity": "HIGH",
     "github_reviewed": true,
     "github_reviewed_at": "2025-10-29T16:05:26Z",
     "nvd_published_at": "2025-06-16T15:15:24Z"
