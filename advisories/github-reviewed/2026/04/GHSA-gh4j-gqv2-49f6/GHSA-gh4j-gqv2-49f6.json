@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-gh4j-gqv2-49f6",
-  "modified": "2026-05-08T21:47:26Z",
+  "modified": "2026-05-08T21:47:28Z",
   "published": "2026-04-22T20:04:17Z",
   "aliases": [
     "CVE-2026-41650"
@@ -28,11 +28,33 @@
               "introduced": "0"
             },
             {
-              "fixed": "5.7.0"
+              "fixed": "4.5.7"
             }
           ]
         }
       ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-xml-parser"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": " 5.7.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "< 5.7.0"
+      }
     }
   ],
   "references": [
