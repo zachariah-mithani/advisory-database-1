@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-9rgm-9g3h-6x36",
-  "modified": "2026-09-17T20:28:21Z",
+  "modified": "2026-09-17T20:28:22Z",
   "published": "2026-09-17T20:28:21Z",
   "aliases": [
     "CVE-2026-81176"
@@ -32,10 +32,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 5.9.1"
-      }
+      ]
     }
   ],
   "references": [
