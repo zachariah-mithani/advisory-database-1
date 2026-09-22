@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6m8p-4fxj-pgc2",
-  "modified": "2021-05-11T19:56:27Z",
+  "modified": "2023-02-01T05:05:31Z",
   "published": "2021-05-17T21:01:08Z",
   "aliases": [
     "CVE-2020-7688"
@@ -32,10 +32,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 1.13.0"
-      }
+      ]
     }
   ],
   "references": [
@@ -60,7 +57,7 @@
     "cwe_ids": [
       "CWE-78"
     ],
-    "severity": "MODERATE",
+    "severity": "HIGH",
     "github_reviewed": true,
     "github_reviewed_at": "2021-05-11T19:56:27Z",
     "nvd_published_at": "2020-07-01T17:15:00Z"
