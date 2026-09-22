@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q3gh-5r98-j4h3",
-  "modified": "2023-01-27T21:41:14Z",
+  "modified": "2023-01-27T21:41:16Z",
   "published": "2020-06-26T16:26:50Z",
   "aliases": [
     "CVE-2020-14968"
@@ -32,10 +32,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "< 8.0.16"
-      }
+      ]
     }
   ],
   "references": [
