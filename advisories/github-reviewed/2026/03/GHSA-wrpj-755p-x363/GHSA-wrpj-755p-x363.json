@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-wrpj-755p-x363",
-  "modified": "2026-04-01T23:10:14Z",
+  "modified": "2026-04-01T23:10:15Z",
   "published": "2026-03-31T00:31:12Z",
   "aliases": [
     "CVE-2026-32794"
@@ -18,17 +18,17 @@
     {
       "package": {
         "ecosystem": "PyPI",
-        "name": "apache-airflow"
+        "name": "apache-airflow-providers-databricks"
       },
       "ranges": [
         {
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "1.10.0"
+              "introduced": "7.10.0"
             },
             {
-              "fixed": "1.12.0"
+              "fixed": "7.12.0"
             }
           ]
         }
@@ -47,6 +47,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/apache/airflow"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/apache/airflow/blob/main/providers/databricks/docs/changelog.rsthttps://pypi.org/project/apache-airflow-providers-databricks/7.12.0"
     },
     {
       "type": "WEB",
