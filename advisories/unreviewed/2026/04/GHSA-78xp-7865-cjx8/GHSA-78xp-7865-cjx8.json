@@ -1,23 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-78xp-7865-cjx8",
-  "modified": "2026-04-28T09:34:13Z",
+  "modified": "2026-04-28T09:34:20Z",
   "published": "2026-04-28T09:34:13Z",
   "aliases": [
     "CVE-2026-7237"
   ],
+  "summary": "@agiflowai/scaffold-mcp vulnerable to arbitrary file write via path traversal",
   "details": "A vulnerability was detected in AgiFlow scaffold-mcp up to 1.0.27. Affected by this issue is some unknown functionality of the file packages/scaffold-mcp/src/server/index.ts of the component write-to-file Tool. The manipulation of the argument file_path results in path traversal. The attack may be launched remotely. The exploit is now public and may be used. Upgrading to version 1.1.0 can resolve this issue. The patch is identified as c4d23592ae5fb59cfeefc4641e6826f8ac89b9c6. You should upgrade the affected component.",
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
-    },
-    {
-      "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@agiflowai/scaffold-mcp"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -34,6 +51,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/AgiFlow/aicode-toolkit/commit/c4d23592ae5fb59cfeefc4641e6826f8ac89b9c6"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/AgiFlow/aicode-toolkit"
     },
     {
       "type": "WEB",
@@ -56,7 +77,7 @@
     "cwe_ids": [
       "CWE-22"
     ],
-    "severity": "MODERATE",
+    "severity": "LOW",
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2026-04-28T08:16:02Z"
