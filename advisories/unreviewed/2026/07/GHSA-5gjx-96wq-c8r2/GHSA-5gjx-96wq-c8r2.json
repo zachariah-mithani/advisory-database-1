@@ -1,23 +1,59 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-5gjx-96wq-c8r2",
-  "modified": "2026-07-17T18:31:27Z",
+  "modified": "2026-07-17T18:31:34Z",
   "published": "2026-07-17T18:31:27Z",
   "aliases": [
     "CVE-2026-63308"
   ],
-  "details": "Helm through 4.2.3, fixed in commit ba6c9a2, contains a denial of service vulnerability in the Files.Lines template helper in pkg/engine/files.go that allows attackers to trigger an index out of range panic by including zero-length byte slices in chart files. Attackers can include empty files in Helm charts to cause deterministic render failures across template, install, upgrade, lint, and SDK Engine.Render operations.",
+  "summary": "Helm Files.Lines can fail chart rendering when a chart file is empty",
+  "details": "Helm contains a denial of service vulnerability in the Files.Lines template helper in pkg/engine/files.go. When a chart template calls Files.Lines on an existing empty file, the helper indexes an empty string while checking for a trailing newline. This can cause a recovered panic and render failure in template, install, upgrade, lint, and SDK Engine.Render operations.\n\nThe affected Go modules are helm.sh/helm/v3 from 3.13.0-rc.1 before 3.21.4, and helm.sh/helm/v4 from 4.0.0-alpha.1 before 4.3.0-rc.1. The stable releases containing the fix are Helm 3.21.4 and 4.3.0. Helm 4.2.4 still contains the vulnerable implementation. The fix is also present in the 4.3.0-rc.1 prerelease.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "helm.sh/helm/v3"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.13.0-rc.1"
+            },
+            {
+              "fixed": "3.21.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "helm.sh/helm/v4"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0-alpha.1"
+            },
+            {
+              "fixed": "4.3.0-rc.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -33,11 +69,35 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/helm/helm/commit/ba6c9a29efa7bf9198dad6a5ec12b4fb30c96017"
+      "url": "https://github.com/helm/helm/pull/32303"
     },
     {
       "type": "WEB",
-      "url": "https://www.vulncheck.com/advisories/chat2db-insecure-direct-object-reference-via-get-api-connection-datasource"
+      "url": "https://github.com/helm/helm/commit/ba6c9a29efa7bf9198dad6a5ec12b4fb30c96017"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/helm/helm"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/helm/helm/blob/v4.2.4/pkg/engine/files.go#L156-L165"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/helm/helm/blob/v4.3.0-rc.1/pkg/engine/files.go#L156-L165"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/helm/helm/releases/tag/v3.13.0"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/helm/helm/releases/tag/v3.21.4"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/helm/helm/releases/tag/v4.3.0"
     }
   ],
   "database_specific": {
