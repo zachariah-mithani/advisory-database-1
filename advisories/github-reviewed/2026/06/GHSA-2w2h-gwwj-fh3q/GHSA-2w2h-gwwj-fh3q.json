@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-2w2h-gwwj-fh3q",
-  "modified": "2026-09-25T18:08:12Z",
+  "modified": "2026-09-25T18:08:13Z",
   "published": "2026-06-24T15:31:47Z",
   "aliases": [
     "CVE-2026-57284"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "io.jenkins.plugins:pipeline-groovy-lib"
+        "name": "org.jenkins-ci.plugins.workflow:workflow-cps"
       },
       "ranges": [
         {
