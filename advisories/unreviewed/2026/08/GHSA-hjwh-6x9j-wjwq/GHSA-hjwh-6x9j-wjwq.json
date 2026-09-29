@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-hjwh-6x9j-wjwq",
-  "modified": "2026-08-05T09:31:18Z",
+  "modified": "2026-08-05T09:31:27Z",
   "published": "2026-08-05T09:31:18Z",
   "aliases": [
     "CVE-2026-71202"
   ],
+  "summary": "raster crop() integer underflow can cause denial of service",
   "details": "The raster Rust crate's crop() function (src/editor.rs) clamps the crop width/height against source dimensions but only clamps the offset_x/offset_y parameters against 0, never against the source width/height. When an offset exceeds the corresponding source dimension, `width2 - offset_x` (or the height equivalent) underflows to a negative i32, which release builds do not trap; the negative value is then cast to usize inside Image::blank()'s Vec::with_capacity() call, triggering a capacity-overflow panic and crashing the process on a single crafted crop request.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "crates.io",
+        "name": "raster"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "0.2.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -22,6 +43,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/kosinix/raster/issues/30"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/kosinix/raster/blob/f54e52004ef889748caf2322d5bd9e25837615ef/src/editor.rs#L275-L300"
     }
   ],
   "database_specific": {
