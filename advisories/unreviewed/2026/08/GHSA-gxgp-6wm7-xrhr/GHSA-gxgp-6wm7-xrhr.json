@@ -6,14 +6,32 @@
   "aliases": [
     "CVE-2026-72592"
   ],
-  "details": "An unrestricted file upload vulnerability in dulldusk/phpfm through 1.8.0 allows an unauthenticated remote attacker to execute arbitrary PHP code on the server. The application ships with an empty upload extension filter ( = array) and no authentication enabled by default (auth_pass is empty string), allowing an unauthenticated attacker to upload a PHP webshell and execute it by browsing to the uploaded path.",
+  "summary": "CVE-2026-72592 was addressed and fixed on new phpFM v1.8.1",
+  "details": "- BugFix for https://github.com/advisories/GHSA-gxgp-6wm7-xrhr (Aug 10, 2026) https://nvd.nist.gov/vuln/detail/cve-2026-72592\nphpFileManager now blocks by default, upload of any files with extensions that could be used as webshell, the user can edit the blocked extensions on the config window.",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -26,6 +44,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/dulldusk/phpfm/blob/master/index.php"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://raw.githubusercontent.com/dulldusk/phpfm/refs/heads/master/index.php"
     }
   ],
   "database_specific": {
