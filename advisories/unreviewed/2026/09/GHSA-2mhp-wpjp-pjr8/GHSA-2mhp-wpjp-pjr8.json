@@ -1,19 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-2mhp-wpjp-pjr8",
-  "modified": "2026-09-21T12:32:38Z",
+  "modified": "2026-09-21T12:32:40Z",
   "published": "2026-09-21T12:32:38Z",
   "aliases": [
     "CVE-2026-65652"
   ],
+  "summary": "temporalio/tchannel-go malformed checksum type can terminate the hosting process",
   "details": "github.com/temporalio/tchannel-go did not validate the one-byte checksum-type field in inbound TChannel call frames. A network peer that can reach a listener can complete the standard initialization handshake and send a call request with an unsupported checksum type. The parser uses that value as an index into a four-entry checksum pool, causing an unrecovered Go panic on the connection read goroutine and terminating the hosting process. This allows remote denial of service against applications that expose the listener to untrusted peers. The impact is limited to availability; no confidentiality or integrity impact was identified.",
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/temporalio/tchannel-go"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0-20160105034737-a6904155f628"
+            },
+            {
+              "fixed": "1.22.1-0.20260720194454-0cb017f6870a"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -36,7 +57,7 @@
       "url": "https://github.com/temporalio/tchannel-go/blob/8706a1ab5f617efd79dace7ab2d1d80cc1881df0/checksum.go#L29-L93"
     },
     {
-      "type": "WEB",
+      "type": "PACKAGE",
       "url": "https://github.com/temporalio/tchannel-go/blob/8706a1ab5f617efd79dace7ab2d1d80cc1881df0/reqres.go#L280-L295"
     },
     {
