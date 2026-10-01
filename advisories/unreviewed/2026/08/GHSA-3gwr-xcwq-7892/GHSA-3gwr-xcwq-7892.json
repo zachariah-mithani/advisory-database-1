@@ -1,23 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-3gwr-xcwq-7892",
-  "modified": "2026-08-26T18:30:54Z",
+  "modified": "2026-08-26T18:30:55Z",
   "published": "2026-08-12T00:31:11Z",
   "aliases": [
     "CVE-2026-5917"
   ],
-  "details": "libgit2 versions v0.27.0 through v1.9.0 built with the libssh2 SSH backend (USE_SSH=libssh2) contain a shell command injection vulnerability that allows remote attackers to execute arbitrary commands on an SSH server by supplying a repository path containing unescaped shell metacharacters such as single quotes, semicolons, or pipes. The gen_proto() function in ssh_libssh2.c inserts the repository path directly into a shell command string without escaping special characters before passing it to libssh2_channel_exec(), enabling an attacker to craft a malicious submodule URL in a .gitmodules file that, when processed during a recursive clone, causes the remote server's shell to interpret injected commands under the victim's SSH user account.",
+  "summary": "SSH command injection in libgit2 bundled by libgit2-sys",
+  "details": "libgit2's libssh2 transport fails to escape SSH repository paths. An attacker-controlled URL, including a submodule URL processed during an explicit update, can execute commands on the SSH server under the authenticated account.\n\nThe Rust crate `libgit2-sys` bundles libgit2. Versions before `0.18.8` are affected when using the bundled library with the libssh2 transport. Version `0.18.8+1.9.7` includes the fix. Builds linked to a system libgit2 depend on that library's version and transport configuration; upstream fixes are available in libgit2 1.8.7 and 1.9.7.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "crates.io",
+        "name": "libgit2-sys"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "0.18.8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "WEB",
@@ -29,7 +46,39 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/rust-lang/git2-rs/pull/1310"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/libgit2/libgit2/commit/b2105b8e60798cb28086d4c648b1cb4854eadccb"
+    },
+    {
+      "type": "WEB",
+      "url": "https://crates.io/crates/libgit2-sys"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/CVEProject/cvelistV5/blob/3ba6e2c0b1e7e6598db39d9c0b256768f33faec5/cves/2026/5xxx/CVE-2026-5917.json"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/libgit2/libgit2"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/libgit2/libgit2/releases/tag/v1.8.7"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/libgit2/libgit2/releases/tag/v1.9.7"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/rust-lang/git2-rs"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/rust-lang/git2-rs/blob/6c93812dbc1c34aef6e6464a645545b4a4299807/libgit2-sys/CHANGELOG.md"
     },
     {
       "type": "WEB",
