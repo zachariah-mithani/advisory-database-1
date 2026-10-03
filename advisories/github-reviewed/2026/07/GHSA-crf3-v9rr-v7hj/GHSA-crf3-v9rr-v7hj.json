@@ -47,6 +47,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
+    },
+    {
+      "type": "WEB",
+      "url": "https://zerohunt.ai/blog/fastjson-cve-2026-16723-gadget-free-rce"
     }
   ],
   "database_specific": {
