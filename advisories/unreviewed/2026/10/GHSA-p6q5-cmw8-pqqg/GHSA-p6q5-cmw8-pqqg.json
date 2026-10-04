@@ -6,18 +6,35 @@
   "aliases": [
     "CVE-2026-105216"
   ],
-  "details": "go-micro before 6.0.0 contains an improper certificate validation vulnerability that allows network attackers to impersonate services because the shared TLS helper sets InsecureSkipVerify to true by default. Man-in-the-middle attackers can present any certificate to intercept or modify gRPC transport, HTTP and RabbitMQ broker, and Consul or etcd registry traffic, including authentication tokens and credentials.",
+  "summary": "go-micro disables TLS certificate verification by default",
+  "details": "go-micro v5.13.0 through v5.30.0 disables TLS certificate verification by default in its shared TLS configuration. The default `Config()` sets `InsecureSkipVerify` to true unless `MICRO_TLS_SECURE=true` is explicitly configured.\nAs a result, applications relying on the default TLS configuration may fail to authenticate the remote endpoint, potentially allowing a network-positioned attacker to perform a man-in-the-middle attack.\nThe affected TLS configuration is used by components including gRPC transport, HTTP and RabbitMQ brokers, and Consul and etcd registry integrations.\nIn v6.0.0, the default was changed to secure certificate verification (`InsecureSkipVerify=false`). Disabling verification now requires the explicit `MICRO_TLS_INSECURE=true` configuration.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "go-micro.dev/v5"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.13.0"
+            },
+            {
+              "last_affected": "5.30.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -32,12 +49,16 @@
       "url": "https://github.com/micro/go-micro/commit/c7657f73f45cf839e643db10f28703eeab7299c3"
     },
     {
-      "type": "WEB",
+      "type": "PACKAGE",
       "url": "https://github.com/micro/go-micro"
     },
     {
       "type": "WEB",
       "url": "https://github.com/micro/go-micro/blob/v5.30.0/internal/util/tls/tls.go#L43-L67"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/micro/go-micro/blob/v6.0.0/internal/util/tls/tls.go"
     },
     {
       "type": "WEB",
