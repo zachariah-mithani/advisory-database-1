@@ -1,23 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-8f6w-7m2h-mfwg",
-  "modified": "2026-10-04T18:30:21Z",
+  "modified": "2026-10-04T18:30:27Z",
   "published": "2026-10-04T18:30:21Z",
   "aliases": [
     "CVE-2026-105218"
   ],
-  "details": "gopay before 1.5.119 disables TLS certificate verification in defaultClient() in pkg/xhttp/client.go, allowing man-in-the-middle attackers to impersonate payment provider APIs. Attackers can present any certificate to read merchant credentials, signatures and transaction data, and modify payment, refund and order query responses.",
+  "summary": "GoPay xhttp client disables TLS certificate verification by default",
+  "details": "GoPay versions 1.5.27 through 1.5.118 disable TLS certificate verification by default in the xhttp client.\n\nThe default client configures `http.Transport` with `tls.Config{InsecureSkipVerify: true}`, causing TLS connections made through the default xhttp client to skip server certificate verification.\n\nAs a result, applications relying on the affected default client may fail to authenticate the remote TLS endpoint, potentially allowing a network-positioned attacker to perform a man-in-the-middle attack.\n\nThe insecure default was introduced before the v1.5.27 release. Version 1.5.119 removes the default `InsecureSkipVerify: true` configuration and enables normal TLS certificate verification. Applications that intentionally require a custom TLS configuration can configure it explicitly.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/go-pay/gopay"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.27"
+            },
+            {
+              "fixed": "1.5.119"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -29,10 +46,14 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/go-pay/gopay/commit/f6df04fd4f64a2ad2c303ba063b6502bfdd259fd"
+      "url": "https://github.com/go-pay/gopay/commit/988e18a0f7e75ce002e96614e8d8a1a354f593f8"
     },
     {
       "type": "WEB",
+      "url": "https://github.com/go-pay/gopay/commit/f6df04fd4f64a2ad2c303ba063b6502bfdd259fd"
+    },
+    {
+      "type": "PACKAGE",
       "url": "https://github.com/go-pay/gopay"
     },
     {
