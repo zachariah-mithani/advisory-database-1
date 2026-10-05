@@ -6,18 +6,32 @@
   "aliases": [
     "CVE-2026-105222"
   ],
-  "details": "The alexpechkarev/google-maps Laravel package through 12.16 disables TLS certificate verification by default because the bundled config sets ssl_verify_peer to FALSE, which is passed to CURLOPT_SSL_VERIFYPEER. On-path attackers can present any certificate to intercept Google Maps web-service requests, steal the API key from the query string, and tamper with responses.",
+  "summary": "alexpechkarev/google-maps disables TLS certificate verification by default",
+  "details": "The `alexpechkarev/google-maps` Laravel package disables TLS certificate and hostname verification by default starting in version 1.0.2.\n\nThe bundled configuration sets `ssl_verify_peer` to `FALSE`. This value is loaded by `WebService` and passed directly to `CURLOPT_SSL_VERIFYPEER`. When disabled, the package also sets `CURLOPT_SSL_VERIFYHOST` to `0`.\n\nAs a result, HTTPS connections made by the package do not authenticate the remote TLS endpoint by default. An on-path attacker may therefore be able to intercept or modify Google Maps web-service requests and responses, including potentially exposing API keys transmitted in request URLs.\n\nThe insecure default was introduced in commit `7f9dcce` and is present in release 1.0.2. Version 1.0.1 does not contain the `ssl_verify_peer` configuration option. The insecure default remains present in the latest release, 12.16, and on the current default branch. No patched release has been identified.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "alexpechkarev/google-maps"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -29,11 +43,19 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/alexpechkarev/google-maps/commit/7f9dcce"
+    },
+    {
+      "type": "PACKAGE",
       "url": "https://github.com/alexpechkarev/google-maps"
     },
     {
       "type": "WEB",
       "url": "https://github.com/alexpechkarev/google-maps/blob/v12.14/src/WebService.php#L267-L269"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/alexpechkarev/google-maps/blob/v12.16/src/WebService.php#L280-L281"
     },
     {
       "type": "WEB",
