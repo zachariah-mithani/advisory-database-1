@@ -1,19 +1,154 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fh45-7f3j-r575",
-  "modified": "2026-06-16T12:32:02Z",
+  "modified": "2026-06-16T12:32:12Z",
   "published": "2026-06-16T12:32:02Z",
   "aliases": [
     "CVE-2026-8484"
   ],
-  "details": "A heap buffer overflow vulnerability exists in the Jansi JNI \"ioctl()\" wrapper due to a lack of size verification for the argument array before the system call. This can lead to heap corruption and application crashes (DoS).\nAll versions are believed to be vulnerable. This project is unmaintained at the time of CVE assignment.",
+  "summary": "Jansi has a heap buffer overflow in its JNI ioctl() wrapper",
+  "details": "A heap buffer overflow exists in the native (JNI) implementation of `org.fusesource.jansi.internal.CLibrary.ioctl(int, long, int[])`. The wrapper passes the Java array's elements straight to `ioctl()` without checking that the array is large enough for the request. The kernel writes as many bytes as the request defines (for example, `TCGETS` writes a 36-byte `struct termios` on Linux x86-64), so a caller that passes a short `int[]` corrupts the native heap and can crash the JVM (denial of service).\n\nAll versions through 2.4.3 are affected. 2.4.3 is the last release: the project was deprecated in March 2026 and is unmaintained, so no fixed version exists.",
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.12"
+            },
+            {
+              "last_affected": "2.4.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-native"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-linux32"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-linux64"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-osx"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-freebsd32"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.7"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.fusesource.jansi:jansi-freebsd64"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.7"
+            },
+            {
+              "last_affected": "1.8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -21,7 +156,19 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/fusesource/jansi/pull/312"
+    },
+    {
+      "type": "WEB",
       "url": "https://cert.pl/en/posts/2026/06/CVE-2026-8484"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/fusesource/jansi"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/fusesource/jansi/blob/jansi-2.4.3/src/main/native/jansi.c#L78"
     },
     {
       "type": "WEB",
