@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rcjc-c4pj-xxrp",
-  "modified": "2026-07-02T21:42:16Z",
+  "modified": "2026-07-02T21:42:19Z",
   "published": "2023-11-20T09:30:31Z",
   "aliases": [
     "CVE-2022-46337"
@@ -210,28 +210,6 @@
       },
       "versions": [
         "10.13.1.1"
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "org.apache.derby:derby"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "10.14.2.0"
-            },
-            {
-              "fixed": "10.14.2.1"
-            }
-          ]
-        }
-      ],
-      "versions": [
-        "10.14.2.0"
       ]
     },
     {
