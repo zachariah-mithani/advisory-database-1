@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-27v5-c462-wpq7",
-  "modified": "2026-03-27T22:23:52Z",
+  "modified": "2026-03-27T22:23:55Z",
   "published": "2026-03-27T22:23:52Z",
   "aliases": [
     "CVE-2026-4923"
@@ -43,6 +43,10 @@
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4923"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/pillarjs/path-to-regexp/commit/48646547da685c1ccb76a95fe23373975a91e200"
     },
     {
       "type": "WEB",
