@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rrw2-px9j-qffj",
-  "modified": "2025-11-07T12:29:27Z",
+  "modified": "2025-11-07T12:29:28Z",
   "published": "2025-09-05T20:58:23Z",
   "aliases": [
     "CVE-2025-58369"
   ],
   "summary": "FS2 half-shutdown of socket during TLS handshake may result in spin loop on opposite side",
-  "details": "### Impact\nWhen establishing a TLS session using `fs2-io` on the JVM using the `fs2.io.net.tls` package, if one side of the connection shuts down write while the peer side is awaiting more data to progress the TLS handshake, the peer side will spin loop on the socket read, fully utilizing a CPU. This CPU is consumed until the overall connection is closed.\n\nThis could be used as a denial of service attack on an fs2-io powered server -- for example, by opening many connections and putting them in a half-shutdown state.\n\nNote: this issue impacts ember backed http4s servers with HTTPS as a result of ember using fs2's TLS support.\n\n### Patches\nFixed in fs2 3.12.2 and 3.13.0-M7.\n\n### Workarounds\nNo workarounds.\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n[Open an issue.](https://github.com/typelevel/fs2/issues/new/choose)\nContact the [Typelevel Security Team](https://github.com/typelevel/.github/blob/main/SECURITY.md).",
+  "details": "I'm not sure how you're getting this but the build for my project clearly explicitly pins a newer version than this advisory affects.\n\n### Impact\nWhen establishing a TLS session using `fs2-io` on the JVM using the `fs2.io.net.tls` package, if one side of the connection shuts down write while the peer side is awaiting more data to progress the TLS handshake, the peer side will spin loop on the socket read, fully utilizing a CPU. This CPU is consumed until the overall connection is closed.\n\nThis could be used as a denial of service attack on an fs2-io powered server -- for example, by opening many connections and putting them in a half-shutdown state.\n\nNote: this issue impacts ember backed http4s servers with HTTPS as a result of ember using fs2's TLS support.\n\n### Patches\nFixed in fs2 3.12.2 and 3.13.0-M7.\n\n### Workarounds\nNo workarounds.\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n[Open an issue.](https://github.com/typelevel/fs2/issues/new/choose)\nContact the [Typelevel Security Team](https://github.com/typelevel/.github/blob/main/SECURITY.md).",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -25,10 +25,48 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "3.0.0-M1"
+              "introduced": "3.13.0-M1"
             },
             {
-              "fixed": "3.12.2"
+              "fixed": "3.13.0-M7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "co.fs2:fs2-io_2.13"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.13.0-M1"
+            },
+            {
+              "fixed": "3.13.0-M7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "co.fs2:fs2-io_3"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.13.0-M1"
+            },
+            {
+              "fixed": "3.13.0-M7"
             }
           ]
         }
@@ -44,10 +82,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "3.13.0-M1"
+              "introduced": "3.0.0-M1"
             },
             {
-              "fixed": "3.13.0-M7"
+              "fixed": "3.12.2"
             }
           ]
         }
@@ -75,25 +113,6 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "co.fs2:fs2-io_2.13"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "3.13.0-M1"
-            },
-            {
-              "fixed": "3.13.0-M7"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
         "name": "co.fs2:fs2-io_3"
       },
       "ranges": [
@@ -105,25 +124,6 @@
             },
             {
               "fixed": "3.12.2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "Maven",
-        "name": "co.fs2:fs2-io_3"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "3.13.0-M1"
-            },
-            {
-              "fixed": "3.13.0-M7"
             }
           ]
         }
