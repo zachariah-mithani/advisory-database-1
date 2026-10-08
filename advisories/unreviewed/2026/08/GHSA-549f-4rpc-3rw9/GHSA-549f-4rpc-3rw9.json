@@ -1,23 +1,159 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-549f-4rpc-3rw9",
-  "modified": "2026-08-28T21:31:07Z",
+  "modified": "2026-08-28T21:32:13Z",
   "published": "2026-08-27T21:31:39Z",
   "aliases": [
     "CVE-2026-59281"
   ],
-  "details": "Spring MVC and WebFlux applications that obtain a data-binding Errors instance with HTML escaping enabled and then render field errors using the no-argument Errors.getFieldErrors() or Errors.getFieldError() accessors are vulnerable to arbitrary HTML/JavaScript code injection, potentially resulting in a reflected cross-site scripting (XSS) vulnerability.\nSpring Framework 7.0.0 - 7.0.8\nSpring Framework 6.2.0 - 6.2.19\nSpring Framework 6.1.0 - 6.1.28\nSpring Framework 6.0.0 - 6.0.30\nSpring Framework 5.3.0 - 5.3.49\nSpring Framework 5.2.25.RELEASE and earlier",
+  "summary": "Spring Framework Cross-site Scripting via EscapedErrors",
+  "details": "Spring MVC and WebFlux applications that obtain a data-binding Errors instance with HTML escaping enabled and then render field errors using the no-argument Errors.getFieldErrors() or Errors.getFieldError() accessors are vulnerable to arbitrary HTML/JavaScript code injection, potentially resulting in a reflected cross-site scripting (XSS) vulnerability.\nSpring Framework 7.0.0 - 7.0.8\nSpring Framework 6.2.0 - 6.2.19\nSpring Framework 6.1.0 - 6.1.28\nSpring Framework 6.0.0 - 6.0.30\nSpring Framework 5.3.0 - 5.3.49\nSpring Framework 5.2.25.RELEASE and earlier\n\n### Fixed Versions\n\nThe following versions contain fixes for CVE-2026-59281:\n\n| Spring Framework Version | Fixed Version | Availability |\n|---|---|---|\n| 7.0.0 – 7.0.8 | 7.0.9 | Open Source |\n| 6.2.0 – 6.2.19 | 6.2.20 | Enterprise Support Only |\n| 6.1.0 – 6.1.28 | 6.1.29 | Enterprise Support Only |\n| 6.0.0 – 6.0.30 | 6.0.31 | Enterprise Support Only |\n| 5.3.0 – 5.3.49 | 5.3.50 | Enterprise Support Only |\n| 5.2.25.RELEASE and earlier | 5.2.26 | Enterprise Support Only |\n\nFor additional details, refer to the official Spring Security Advisory:\nhttps://spring.io/security/cve-2026-59281",
   "severity": [
     {
       "type": "CVSS_V3",
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.0.9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.2.0"
+            },
+            {
+              "fixed": "6.2.20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.1.0"
+            },
+            {
+              "fixed": "6.1.29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.0.0"
+            },
+            {
+              "fixed": "6.0.31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.3.0"
+            },
+            {
+              "fixed": "5.3.50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "5.2.25.RELEASE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59281"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-framework/issues/37055"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-framework/commit/8cb1151375d2e22e14f3406e05f99fc333a618f7"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-framework/commit/ac0f8be0d821d0a51f02b4ef504755ff35ccd464"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/spring-projects/spring-framework"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-framework/releases/tag/v7.0.9"
     },
     {
       "type": "WEB",
