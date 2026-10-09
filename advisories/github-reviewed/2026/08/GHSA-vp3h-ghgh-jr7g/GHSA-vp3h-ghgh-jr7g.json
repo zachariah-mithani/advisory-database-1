@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-vp3h-ghgh-jr7g",
-  "modified": "2026-08-06T20:10:03Z",
+  "modified": "2026-08-06T20:10:04Z",
   "published": "2026-08-06T20:10:03Z",
   "aliases": [
     "CVE-2026-71476"
