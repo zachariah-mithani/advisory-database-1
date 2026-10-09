@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6c5v-hqjr-5xxp",
-  "modified": "2026-09-03T20:15:13Z",
+  "modified": "2026-09-03T20:15:14Z",
   "published": "2026-09-03T20:15:13Z",
   "aliases": [
     "CVE-2026-79921"
@@ -29,6 +29,25 @@
             },
             {
               "fixed": "1.13.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/streadway/amqp"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "1.1.0"
             }
           ]
         }
