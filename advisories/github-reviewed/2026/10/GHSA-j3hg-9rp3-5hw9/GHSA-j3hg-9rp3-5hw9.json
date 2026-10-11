@@ -1,17 +1,17 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-j3hg-9rp3-5hw9",
-  "modified": "2026-10-09T20:57:08Z",
+  "modified": "2026-10-09T20:57:10Z",
   "published": "2026-10-09T20:57:08Z",
   "aliases": [
     "CVE-2026-107805"
   ],
-  "summary": "Nginx UI: Unauthenticated signed-request body staging can exhaust temporary storage",
-  "details": "## Summary\n\nIn Nginx UI versions 2.5.0 through 2.5.x, the node-signature authentication path staged an attacker-controlled request body in a temporary file and synchronized it to disk before validating the body digest and cryptographic signature. An unauthenticated remote client that can reach the API can provide syntactically valid signature metadata and cause storage and I/O consumption before the request is rejected.\n\n## Impact\n\nConcurrent malicious requests can consume temporary filesystem capacity, disk I/O, and request-processing resources, potentially disrupting Nginx UI and other services that share the filesystem. The issue affects availability only; it does not bypass authentication and does not provide confidentiality or integrity impact. Deployment-specific reverse-proxy body limits, filesystem quotas, and concurrency limits may reduce practical impact.\n\n## Remediation\n\nUpgrade to Nginx UI 2.6.0 or later. The fix authenticates signed request metadata before staging the body and enforces an application-level streaming size limit with cleanup for rejected requests.\n\nFix commit: https://github.com/0xJacky/nginx-ui/commit/8c9b9a1aff218ee6c980d047b750e49da3c46796",
+  "summary": "Giao diện người dùng Nginx: Dàn dựng phần thân yêu cầu có chữ ký chưa được xác thực có thể làm cạn kiệt bộ nhớ tạm thời",
+  "details": "## Summary\n\nIn Nginx UI versions 2.5.0 through 2.5.x, the node-signature authentication path staged an attacker-controlled request body in a temporary file and synchronized it to disk before validating the body digest and cryptographic signature. An unauthenticated remote client that can reach the API can provide syntactically valid signature metadata and cause storage and I/O consumption before the request `is` rejected.\n\n## Impact\n\nConcurrent malicious requests can consume temporary \n\n- [ ] \n\n- [ ] filesystem capacity, disk I/O, and request-processing resources, potentially disrupting Nginx UI and other services that share the filesystem. The issue affects availability only; it does not bypass authentication and does not provide confidentiality or integrity impact. Deployment-specific reverse-proxy body limits, filesystem quotas, and concurrency limits may reduce practical impact.\n\n## Remediation\n\nUpgrade to Nginx UI 2.6.0 or later. The fix authenticates signed request metadata before staging the body and enforces an application-level streaming size limit with cleanup for rejected requests.\n\nFix commit: https://github.com/0xJacky/nginx-ui/commit/8c9b9a1aff218ee6c980d047b750e49da3c46796",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      "type": "CVSS_V4",
+      "score": "CVSS:4.0/AV:A/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
@@ -29,6 +29,22 @@
             },
             {
               "fixed": "1.9.10-0.20260901043436-8c9b9a1aff21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/0xJacky/Nginx-UI"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
             }
           ]
         }
@@ -59,9 +75,10 @@
   ],
   "database_specific": {
     "cwe_ids": [
-      "CWE-400"
+      "CWE-400",
+      "CWE-5"
     ],
-    "severity": "HIGH",
+    "severity": "LOW",
     "github_reviewed": true,
     "github_reviewed_at": "2026-10-09T20:57:08Z",
     "nvd_published_at": "2026-10-09T15:17:09Z"
