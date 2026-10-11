@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-g357-x5c3-c72p",
-  "modified": "2026-07-24T14:05:20Z",
+  "modified": "2026-07-24T14:05:21Z",
   "published": "2026-07-24T14:05:20Z",
   "aliases": [
     "CVE-2026-55575"
@@ -11,7 +11,7 @@
   "severity": [
     {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/"
+      "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
