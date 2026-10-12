@@ -1,18 +1,14 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-wf93-45jw-7689",
-  "modified": "2026-07-10T12:31:36Z",
+  "modified": "2026-07-10T12:31:50Z",
   "published": "2026-06-01T18:31:53Z",
   "aliases": [
     "CVE-2026-8643"
   ],
   "summary": " pip: Path traversal in console_scripts/gui_scripts entry point names allows installing scripts outside of target directory",
-  "details": "pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory.",
+  "details": "## Summary\n\nVersions of `pip` before 26.1.2 are affected by a path traversal vulnerability involving `console_scripts` and `gui_scripts` entry-point names.\n\nWhen installing a Python distribution that declares these entry points, pip could interpret an entry-point name as a filesystem path without adequately ensuring that the resulting script destination remained inside the intended scripts installation directory.\n\nA specially crafted entry-point name could therefore cause a generated script to be installed outside the intended directory.\n\n## Technical Details\n\nThe vulnerability concerns the handling of script entry-point names during package installation. Entry-point names that resolve outside the configured scripts directory were not sufficiently rejected.\n\nThe upstream fix introduces validation to reject entry-point names whose resolved installation destinations escape the scripts directory.\n\nThe fix was implemented in [pypa/pip#14000](https://github.com/pypa/pip/pull/14000), which was merged on May 20, 2026.\n\n## Impact\n\nInstalling an untrusted or malicious Python distribution containing specially crafted script entry-point metadata could result in files being written outside the intended scripts directory, subject to the permissions of the installation process.\n\n## Remediation\n\nUpgrade pip to version **26.1.2 or later**.\n\nThe pip 26.1.2 release includes the fix for entry-point names that would otherwise cause scripts to be installed outside the scripts directory",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N"
@@ -47,10 +43,6 @@
     {
       "type": "WEB",
       "url": "https://github.com/pypa/pip/pull/14000"
-    },
-    {
-      "type": "WEB",
-      "url": "https://access.redhat.com/errata/RHSA-2026:33313"
     },
     {
       "type": "WEB",
@@ -106,11 +98,19 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/pypa/pip/compare/26.1.1...26.1.2"
+    },
+    {
+      "type": "WEB",
       "url": "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ"
     },
     {
       "type": "WEB",
       "url": "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-8643.json"
+    },
+    {
+      "type": "WEB",
+      "url": "https://access.redhat.com/errata/RHSA-2026:33313"
     },
     {
       "type": "WEB",
