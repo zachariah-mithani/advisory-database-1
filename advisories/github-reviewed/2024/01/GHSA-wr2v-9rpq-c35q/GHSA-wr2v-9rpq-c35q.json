@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-wr2v-9rpq-c35q",
-  "modified": "2024-01-31T00:21:56Z",
+  "modified": "2024-01-31T00:22:00Z",
   "published": "2024-01-31T00:21:56Z",
   "aliases": [
     "CVE-2020-15136"
