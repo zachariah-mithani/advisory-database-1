@@ -1,14 +1,37 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-pfh5-g6h6-v95h",
-  "modified": "2026-10-13T21:33:08Z",
+  "modified": "2026-10-13T21:33:09Z",
   "published": "2026-10-13T21:33:08Z",
   "aliases": [
     "CVE-2026-104937"
   ],
-  "details": "Shopware version 6.7 allows the upload of attacker‑controlled HTML files and serves them as text/html without effective security headers, enabling stored cross-site scripting (XSS). When a malicious uploaded file containing an embedded JavaScript payload is viewed by an administrator, the attacker can access and exfiltrate the administrator's authentication token.\n\nThe compromised token enables unauthorized access to the Shopware Administration API. If the affected administrator account possesses extension‑management privileges, an attacker can upload, install, and activate malicious plugins to achieve arbitrary PHP code execution on the underlying OS with the privileges of the Shopware process.",
-  "severity": [],
-  "affected": [],
+  "summary": "Stored XSS through executable HTML media upload",
+  "details": "Shopware allows files with the `.html` extension to be uploaded through the media management functionality. Public media files may be served directly by the web server, object storage, or CDN with the `text/html` content type and without an effective Content Security Policy.\n\nAn authenticated attacker with `media:create` or `media:update` privileges can upload an HTML file containing malicious JavaScript. If a privileged Administration user opens the resulting media URL, the JavaScript executes under the shop's origin.\n\nSuccessful exploitation may allow the attacker to compromise the Administration authentication token and perform Admin API operations with the victim's privileges. If the affected account is permitted to upload and activate extensions, the attack could potentially be escalated to arbitrary PHP code execution.\n\nExploitation requires user interaction because a privileged user must open the malicious media URL.\n\n## Workaround\n\nUntil a patched Shopware version is available, remove `html` from both the public and private media-extension allowlists.\n\nCreate `config/packages/z-shopware-security.yaml` with the following content:\n\n```yaml\nparameters:\n    shopware.filesystem.allowed_extensions:\n        - jpg\n        - jpeg\n        - png\n        - webp\n        - avif\n        - gif\n        - svg\n        - bmp\n        - tiff\n        - tif\n        - eps\n        - webm\n        - mkv\n        - flv\n        - ogv\n        - ogg\n        - mov\n        - mp4\n        - avi\n        - wmv\n        - pdf\n        - aac\n        - mp3\n        - wav\n        - flac\n        - oga\n        - wma\n        - txt\n        - doc\n        - docx\n        - ico\n        - glb\n        - csv\n        - xls\n        - xlsx\n        - vtt\n        - srt\n        - sub\n        - ass\n        - ssa\n        - step\n        - stp\n\n    shopware.filesystem.private_allowed_extensions:\n        - jpg\n        - jpeg\n        - png\n        - webp\n        - avif\n        - gif\n        - svg\n        - bmp\n        - tiff\n        - tif\n        - eps\n        - webm\n        - mkv\n        - flv\n        - ogv\n        - ogg\n        - mov\n        - mp4\n        - avi\n        - wmv\n        - pdf\n        - aac\n        - mp3\n        - wav\n        - flac\n        - oga\n        - wma\n        - txt\n        - doc\n        - docx\n        - ico\n        - glb\n        - zip\n        - rar\n        - csv\n        - xls\n        - xlsx\n        - xml\n        - vtt\n        - srt\n        - sub\n        - ass\n        - ssa\n        - step\n        - stp\n```\n\nThe parameters are overridden directly because defining another `shopware.filesystem.allowed_extensions` list normally merges it with the default list and may leave `html` enabled.\n\nAfter deploying the configuration, rebuild the cache:\n\n```bash\nAPP_ENV=prod bin/console cache:clear\n```\n\nThis workaround prevents new HTML uploads but does not neutralize files already stored in the media library. Administrators should identify and remove or quarantine existing `.html` media files.",
+  "severity": [
+    {
+      "type": "CVSS_V3",
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "shopware/core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.6.10.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -25,7 +48,7 @@
   ],
   "database_specific": {
     "cwe_ids": [],
-    "severity": null,
+    "severity": "HIGH",
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2026-10-13T19:17:56Z"
