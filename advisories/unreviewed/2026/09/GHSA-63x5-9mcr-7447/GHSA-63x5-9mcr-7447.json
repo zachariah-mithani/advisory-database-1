@@ -1,23 +1,65 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-63x5-9mcr-7447",
-  "modified": "2026-09-15T18:32:27Z",
+  "modified": "2026-09-15T18:32:33Z",
   "published": "2026-09-15T18:32:27Z",
   "aliases": [
     "CVE-2026-91932"
   ],
+  "summary": "Flowise MCP Server Config cwd Parameter Validation Bypass",
   "details": "Flowise before 3.1.4 contains a validation bypass vulnerability in MCP server configuration allowing authenticated attackers remote code execution through an unvalidated cwd parameter. Attackers can bypass path validation using clean filenames in the args array while controlling the working directory to execute malicious code.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+      "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "flowise"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.4"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.1.3"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "flowise-components"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.4"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.1.3"
+      }
+    }
+  ],
   "references": [
     {
       "type": "WEB",
@@ -26,6 +68,10 @@
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91932"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/FlowiseAI/Flowise"
     },
     {
       "type": "WEB",
