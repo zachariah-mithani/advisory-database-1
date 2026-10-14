@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-vmxq-hqjm-cxv7",
-  "modified": "2026-10-05T21:31:33Z",
+  "modified": "2026-10-05T21:32:37Z",
   "published": "2026-10-02T12:31:09Z",
   "aliases": [
     "CVE-2026-103878"
   ],
+  "summary": "Apache Directory LDAP API may transmit sensitive information in cleartext during StartTLS",
   "details": "Cleartext transmission of sensitive information vulnerability in Apache Directory LDAP API.\n\n\n\nA StartTLS extended operation started after a Search request has been sent can lead to receive data in plain text before the TLS Handshake has been completed.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.directory.api:api-ldap-client-api"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.1.0"
+            },
+            {
+              "fixed": "2.1.9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
