@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-8v8x-cx79-35w7",
-  "modified": "2026-09-08T16:29:55Z",
+  "modified": "2026-09-08T16:29:56Z",
   "published": "2026-01-08T20:50:05Z",
   "aliases": [
     "CVE-2026-21884"
@@ -11,7 +11,7 @@
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
     }
   ],
   "affected": [
