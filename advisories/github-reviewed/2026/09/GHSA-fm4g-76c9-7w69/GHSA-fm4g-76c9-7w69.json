@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fm4g-76c9-7w69",
-  "modified": "2026-09-15T19:54:37Z",
+  "modified": "2026-09-15T19:54:38Z",
   "published": "2026-09-15T19:54:37Z",
   "aliases": [
     "CVE-2026-69208"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.http4s:http4s-ember-server_2.12"
+        "name": "org.http4s:http4s-server_2.12"
       },
       "ranges": [
         {
@@ -40,7 +40,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.http4s:http4s-ember-server_2.13"
+        "name": "org.http4s:http4s-server_2.13"
       },
       "ranges": [
         {
@@ -62,7 +62,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.http4s:http4s-ember-server_3"
+        "name": "org.http4s:http4s-server_3"
       },
       "ranges": [
         {
@@ -84,7 +84,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.http4s:http4s-ember-server_2.13"
+        "name": "org.http4s:http4s-server_2.13"
       },
       "ranges": [
         {
@@ -106,7 +106,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.http4s:http4s-ember-server_3"
+        "name": "org.http4s:http4s-server_3"
       },
       "ranges": [
         {
