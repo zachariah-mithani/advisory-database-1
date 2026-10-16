@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-42hx-vrxx-5r6v",
-  "modified": "2022-09-27T22:48:53Z",
+  "modified": "2023-01-28T05:06:59Z",
   "published": "2022-09-25T00:00:15Z",
   "aliases": [
     "CVE-2022-23461"
   ],
   "summary": "Jodit Editor vulnerable to Cross-site Scripting",
-  "details": "Jodit Editor is a WYSIWYG editor written in pure TypeScript without the use of additional libraries. Jodit Editor is vulnerable to XSS attacks when pasting specially constructed input. This issue has not been fully patched. There are no known workarounds.",
+  "details": "Description — замени целиком на:\n\nJodit Editor is a WYSIWYG editor written in pure TypeScript without the use of additional libraries. Versions before 3.18.2 are vulnerable to XSS attacks when pasting specially constructed input: HTML copied from a page controlled by an attacker could carry an event handler (for example `<img onerror>`) through the paste-from-Word path into the editor.\n\nThe published proof of concept no longer executes from jodit 3.18.2. Jodit 4 rewrote the HTML sanitiser (`clean-html` / `safeHTML`), and 4.12.31 closed the remaining `javascript:` URL scheme normalisation gap (CVE-2026-62324, GHSA-j839-gqq4-gf9j). The sanitiser is covered by a regression suite that pins the published payloads.\n\nWorkaround for 3.x: sanitise pasted HTML on the server, or upgrade to a current 4.x release.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "3.24.2"
+              "fixed": "3.18.2"
             }
           ]
         }
@@ -47,6 +47,10 @@
     {
       "type": "ADVISORY",
       "url": "https://securitylab.github.com/advisories/GHSL-2022-030_xdan_jodit"
+    },
+    {
+      "type": "WEB",
+      "url": "https://xdsoft.net/jodit/security"
     }
   ],
   "database_specific": {
