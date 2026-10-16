@@ -1,21 +1,17 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-3hh9-752g-5g22",
-  "modified": "2026-07-15T22:10:24Z",
+  "modified": "2026-07-15T22:10:25Z",
   "published": "2026-06-04T18:30:31Z",
   "aliases": [
     "CVE-2026-10813"
   ],
   "summary": "LMCache: 16-bit multimodal hash collision can poison KV cache entries",
-  "details": "A flaw has been found in LMCache up to 0.4.6. This affects the function hex_hash_to_int16 of the file lmcache/integration/vllm/utils.py of the component KV Cache Handler. Executing a manipulation can lead to use of weak hash. The attack needs to be launched locally. The attack requires a high level of complexity. It is indicated that the exploitability is difficult. The exploit has been published and may be used. The pull request to fix this issue awaits acceptance.",
+  "details": "LMCache's vLLM multimodal integration reduced each multimodal item identifier (image hash or request-scoped identifier) to a 16-bit value via `hex_hash_to_int16()` in `lmcache/integration/vllm/utils.py`, and filled the whole placeholder span with that single value before token-based chunk hashing. With only 65,536 possible values, distinct images with the same placeholder layout and surrounding prompt could produce identical KV cache keys (birthday bound: ~50% collision probability at ~300 distinct images), causing LMCache to return KV cache entries computed for a different image. This can produce incorrect model output and may expose visual context across requests or users.\n\nThe issue was fixed in LMCache 0.5.5 by LMCache/LMCache#4783, which removes the 16-bit truncation and fills each placeholder position with a distinct 31-bit value derived from the full identifier (SHA-256), so cache keys carry the full multimodal identity.\n\n### Workarounds\nUpgrade to 0.5.5 or later. If upgrading is not possible, disable LMCache for multimodal requests.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:L"
-    },
-    {
       "type": "CVSS_V4",
-      "score": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N/E:P"
+      "score": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
@@ -29,10 +25,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "0.3.1"
             },
             {
-              "last_affected": "0.4.6"
+              "fixed": "0.5.5"
             }
           ]
         }
@@ -50,7 +46,15 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/LMCache/LMCache/issues/4086"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/LMCache/LMCache/pull/2932"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/LMCache/LMCache/pull/4783"
     },
     {
       "type": "PACKAGE",
@@ -75,7 +79,8 @@
   ],
   "database_specific": {
     "cwe_ids": [
-      "CWE-327"
+      "CWE-327",
+      "CWE-328"
     ],
     "severity": "LOW",
     "github_reviewed": true,
