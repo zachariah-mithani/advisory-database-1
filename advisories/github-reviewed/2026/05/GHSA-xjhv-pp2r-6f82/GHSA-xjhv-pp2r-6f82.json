@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xjhv-pp2r-6f82",
-  "modified": "2026-06-11T14:07:10Z",
+  "modified": "2026-06-11T14:07:13Z",
   "published": "2026-05-29T21:45:55Z",
   "aliases": [
     "CVE-2026-47213"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "0.8.2"
+              "fixed": "0.9.7"
             }
           ]
         }
