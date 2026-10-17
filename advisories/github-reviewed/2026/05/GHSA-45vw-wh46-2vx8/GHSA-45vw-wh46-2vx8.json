@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-45vw-wh46-2vx8",
-  "modified": "2026-06-05T20:33:13Z",
+  "modified": "2026-06-05T20:33:14Z",
   "published": "2026-05-21T21:31:08Z",
   "aliases": [
     "CVE-2026-46640"
@@ -42,15 +42,15 @@
     },
     {
       "type": "WEB",
+      "url": "https://gist.github.com/vladko312/39507beaa58eacf3b62e6a6e6cd69128"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-46640.yaml"
     },
     {
       "type": "PACKAGE",
       "url": "https://github.com/twigphp/Twig"
-    },
-    {
-      "type": "WEB",
-      "url": "https://github.com/vladko312/extras/blob/main/CVE-2026-46640.py"
     },
     {
       "type": "WEB",
