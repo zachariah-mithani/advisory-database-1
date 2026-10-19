@@ -33,6 +33,25 @@
           ]
         }
       ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "treekill"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "< 1.0.0"
+      }
     }
   ],
   "references": [
