@@ -1,14 +1,40 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-x439-gf26-v2wp",
-  "modified": "2026-10-21T06:31:16Z",
+  "modified": "2026-10-21T06:31:23Z",
   "published": "2026-10-21T06:31:16Z",
   "aliases": [
     "CVE-2026-96901"
   ],
+  "summary": "Cart Abandonment Recovery for WooCommerce WordPress plugin before 2.2.0 does not verify cart-recovery token integrity",
   "details": "The Cart Abandonment Recovery for WooCommerce  WordPress plugin before 2.2.0 does not verify the integrity of its cart-recovery token before acting on it and still accepts an unsigned legacy token format, allowing unauthenticated attackers who know a victim's cart session identifier to modify that victim's abandoned-cart record, for example unsubscribing them from recovery emails or applying an arbitrary coupon to their restored cart.",
-  "severity": [],
-  "affected": [],
+  "severity": [
+    {
+      "type": "CVSS_V3",
+      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "wpackagist-plugin/woo-cart-abandonment-recovery"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -20,8 +46,10 @@
     }
   ],
   "database_specific": {
-    "cwe_ids": [],
-    "severity": null,
+    "cwe_ids": [
+      "CWE-287"
+    ],
+    "severity": "LOW",
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2026-10-21T06:16:51Z"
