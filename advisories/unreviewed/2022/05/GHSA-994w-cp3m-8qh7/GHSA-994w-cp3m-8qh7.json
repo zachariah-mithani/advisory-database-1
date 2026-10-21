@@ -23,13 +23,13 @@
               "introduced": "0"
             },
             {
-              "fixed": "1.9.11.16"
+              "fixed": "1.9.12.03"
             }
           ]
         }
       ],
       "database_specific": {
-        "last_known_affected_version_range": "<= 1.9.11.15"
+        "last_known_affected_version_range": "<= 1.9.12.02"
       }
     }
   ],
