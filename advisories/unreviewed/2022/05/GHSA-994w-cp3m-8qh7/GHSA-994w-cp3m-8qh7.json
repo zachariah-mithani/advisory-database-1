@@ -1,14 +1,38 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-994w-cp3m-8qh7",
-  "modified": "2022-05-24T17:47:49Z",
+  "modified": "2023-01-29T05:06:00Z",
   "published": "2022-05-24T17:47:49Z",
   "aliases": [
     "CVE-2021-29399"
   ],
+  "summary": "XMB BBCode Defect Allowing XSS",
   "details": "XMB is vulnerable to cross-site scripting (XSS) due to inadequate filtering of BBCode input. This bug affects all versions of XMB. All XMB installations must be updated to versions 1.9.12.03 or 1.9.11.16.",
   "severity": [],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "miqrogroove/xmb"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.9.11.16"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 1.9.11.15"
+      }
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -21,6 +45,10 @@
     {
       "type": "WEB",
       "url": "https://forums.xmbforum2.com/viewthread.php?tid=777105"
+    },
+    {
+      "type": "PACKAGE",
+      "url": "https://github.com/miqrogroove/xmb"
     },
     {
       "type": "WEB",
