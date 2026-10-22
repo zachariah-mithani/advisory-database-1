@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-p7fg-763f-g4gf",
-  "modified": "2026-05-08T01:30:32Z",
+  "modified": "2026-05-21T04:56:50Z",
   "published": "2026-04-29T22:28:12Z",
   "aliases": [
     "CVE-2026-41686"
@@ -45,8 +45,16 @@
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41686"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/commit/6db3b7e2218430971cbc137081b5a55ad593fca8"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/anthropics/anthropic-sdk-typescript"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.91.1"
     }
   ],
   "database_specific": {
