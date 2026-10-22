@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q9v2-7m5w-4693",
-  "modified": "2026-09-22T14:40:53Z",
+  "modified": "2026-09-22T14:40:56Z",
   "published": "2026-06-23T06:30:41Z",
   "aliases": [
     "CVE-2026-12866"
@@ -9,10 +9,6 @@
   "summary": "expr-eval vulnerable to Code Execution",
   "details": "All versions of the package expr-eval are vulnerable to Code Execution via the toJSFunction() API. An attacker can execute arbitrary JavaScript by supplying crafted expressions that are compiled into native code using new Function(). Because user-controlled expressions are transformed directly into executable JavaScript, attackers can escape the intended expression sandbox and run arbitrary code within the application's context.",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
@@ -52,6 +48,25 @@
             },
             {
               "last_affected": "2.0.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "expr-eval-fork"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "3.0.3"
             }
           ]
         }
