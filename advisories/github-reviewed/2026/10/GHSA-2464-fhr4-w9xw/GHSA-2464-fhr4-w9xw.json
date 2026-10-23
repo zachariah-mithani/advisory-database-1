@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-2464-fhr4-w9xw",
-  "modified": "2026-10-22T15:52:53Z",
+  "modified": "2026-10-22T15:52:56Z",
   "published": "2026-10-22T15:52:53Z",
   "aliases": [],
   "summary": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
@@ -16,46 +16,18 @@
     {
       "package": {
         "ecosystem": "npm",
-        "name": "next"
+        "name": ""
       },
       "ranges": [
         {
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "10.0.0"
-            },
-            {
-              "fixed": "15.5.28"
+              "introduced": "0"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 15.5.27"
-      }
-    },
-    {
-      "package": {
-        "ecosystem": "npm",
-        "name": "next"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "16.0.0"
-            },
-            {
-              "fixed": "16.4.1"
-            }
-          ]
-        }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 16.4.0"
-      }
+      ]
     }
   ],
   "references": [
