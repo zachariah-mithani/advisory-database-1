@@ -1,14 +1,219 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-38jj-69cp-9wgc",
-  "modified": "2026-10-20T21:30:54Z",
+  "modified": "2026-10-20T21:30:55Z",
   "published": "2026-10-20T15:31:24Z",
   "aliases": [
     "CVE-2026-74048"
   ],
+  "summary": "Apache Tomcat - OpenSSL-FFM FIPS failure does not prevent start-up",
   "details": "Not Failing Securely ('Failing Open') vulnerability in Apache Tomcat. If the OpenSSLLifecycleListener is configured to use FIPS mode but FIPS activation fails, Tomcat logs and error but continues to use JSSE in non-FIPS mode with the provided configuration.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M14 through 11.0.26, from 10.1.22 through 10.1.60, from 9.0.92 through 9.0.122.\n\n\n\nUsers are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fix the issue.",
-  "severity": [],
-  "affected": [],
+  "severity": [
+    {
+      "type": "CVSS_V3",
+      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat-catalina"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0-M14"
+            },
+            {
+              "fixed": "11.0.27"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 11.0.26"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat-catalina"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.22"
+            },
+            {
+              "fixed": "10.1.61"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 10.1.60"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat-catalina"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.92"
+            },
+            {
+              "fixed": "9.0.123"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 9.0.122"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat.embed:tomcat-embed-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0-M14"
+            },
+            {
+              "fixed": "11.0.27"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 11.0.26"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat.embed:tomcat-embed-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.22"
+            },
+            {
+              "fixed": "10.1.61"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 10.1.60"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat.embed:tomcat-embed-core"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.92"
+            },
+            {
+              "fixed": "9.0.123"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 9.0.122"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0-M14"
+            },
+            {
+              "fixed": "11.0.27"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 11.0.26"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.22"
+            },
+            {
+              "fixed": "10.1.61"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 10.1.60"
+      }
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.tomcat:tomcat"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.92"
+            },
+            {
+              "fixed": "9.0.123"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 9.0.122"
+      }
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -16,7 +221,31 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/apache/tomcat/commit/25714916ca36205f63f3c3d0da419981ed9d83c2"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/apache/tomcat/commit/5561032ca9d2bf32fafd8a8a417692c9826e30fe"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/apache/tomcat/commit/db6d674b40ac572f3b2205a4c4f06836516fd3f5"
+    },
+    {
+      "type": "WEB",
       "url": "https://lists.apache.org/thread.html/v5ry0sx1c7x1wr5mx4cddj3p3mv1ho6m"
+    },
+    {
+      "type": "WEB",
+      "url": "https://tomcat.apache.org/security-10.html"
+    },
+    {
+      "type": "WEB",
+      "url": "https://tomcat.apache.org/security-11.html"
+    },
+    {
+      "type": "WEB",
+      "url": "https://tomcat.apache.org/security-9.html"
     },
     {
       "type": "WEB",
@@ -27,7 +256,7 @@
     "cwe_ids": [
       "CWE-636"
     ],
-    "severity": null,
+    "severity": "LOW",
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2026-10-20T14:17:00Z"
