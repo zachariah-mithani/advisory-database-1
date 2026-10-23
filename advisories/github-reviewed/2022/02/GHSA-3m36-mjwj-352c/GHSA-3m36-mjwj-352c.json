@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-3m36-mjwj-352c",
-  "modified": "2024-05-15T20:51:56Z",
+  "modified": "2024-05-24T19:21:23Z",
   "published": "2022-02-12T00:00:47Z",
   "aliases": [
     "CVE-2020-13672"
@@ -162,6 +162,22 @@
             },
             {
               "fixed": "9.1.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core-utility"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
             }
           ]
         }
