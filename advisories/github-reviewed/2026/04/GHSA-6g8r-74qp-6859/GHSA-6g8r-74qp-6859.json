@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6g8r-74qp-6859",
-  "modified": "2026-04-30T17:59:49Z",
+  "modified": "2026-04-30T17:59:50Z",
   "published": "2026-04-22T18:31:46Z",
   "aliases": [
     "CVE-2026-35376"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "0.8.0"
+              "fixed": "0.10.0"
             }
           ]
         }
@@ -43,6 +43,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/uutils/coreutils/pull/11402"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/uutils/coreutils/commit/7cfc74e47ffab452663be6842d788a5164d9688b"
     },
     {
       "type": "PACKAGE",
