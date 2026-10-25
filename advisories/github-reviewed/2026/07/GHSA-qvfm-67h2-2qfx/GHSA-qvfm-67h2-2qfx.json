@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "0.4.71"
+              "fixed": "0.4.80"
             }
           ]
         }
@@ -39,6 +39,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/decolua/9router/security/advisories/GHSA-qvfm-67h2-2qfx"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/decolua/9router/commit/0c7c9de00ae3ab81d6580e3cc368483c4c03f6fd"
     },
     {
       "type": "PACKAGE",
