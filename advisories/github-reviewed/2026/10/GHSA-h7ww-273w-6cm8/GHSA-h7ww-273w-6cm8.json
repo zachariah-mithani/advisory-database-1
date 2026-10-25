@@ -27,10 +27,7 @@
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 3.2.0"
-      }
+      ]
     }
   ],
   "references": [
