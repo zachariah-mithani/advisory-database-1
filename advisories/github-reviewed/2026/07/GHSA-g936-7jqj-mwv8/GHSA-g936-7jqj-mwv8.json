@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-g936-7jqj-mwv8",
-  "modified": "2026-07-10T21:43:13Z",
+  "modified": "2026-07-10T21:43:16Z",
   "published": "2026-07-10T21:43:13Z",
   "aliases": [],
   "summary": "TSDProxy: Internal proxy auth token forwarded to backend services enables management API escalation",
@@ -37,6 +37,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/almeidapaulopt/tsdproxy/security/advisories/GHSA-g936-7jqj-mwv8"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/almeidapaulopt/tsdproxy/commit/434819b4421e6b7471eaeb307533f19c52c222d8"
     },
     {
       "type": "PACKAGE",
