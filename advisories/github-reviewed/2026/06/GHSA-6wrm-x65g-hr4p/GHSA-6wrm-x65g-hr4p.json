@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-6wrm-x65g-hr4p",
-  "modified": "2026-06-18T14:37:28Z",
+  "modified": "2026-06-18T14:37:29Z",
   "published": "2026-06-17T18:35:56Z",
   "aliases": [
     "CVE-2026-55748"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "25.7.3"
+              "fixed": "26.0.0"
             }
           ]
         }
@@ -39,6 +39,10 @@
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55748"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/openstack/horizon/commit/c7863093c67a554b527ddfb8b48fff7d37d140b5"
     },
     {
       "type": "PACKAGE",
