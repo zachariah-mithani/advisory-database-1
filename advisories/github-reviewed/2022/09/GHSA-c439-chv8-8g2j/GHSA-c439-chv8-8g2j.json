@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-c439-chv8-8g2j",
-  "modified": "2022-09-02T22:29:41Z",
+  "modified": "2023-01-08T05:01:29Z",
   "published": "2022-09-02T22:29:41Z",
   "aliases": [],
   "summary": "`os_socketaddr` invalidly assumes the memory layout of std::net::SocketAddr",
@@ -51,7 +51,9 @@
     }
   ],
   "database_specific": {
-    "cwe_ids": [],
+    "cwe_ids": [
+      "CWE-188"
+    ],
     "severity": "HIGH",
     "github_reviewed": true,
     "github_reviewed_at": "2022-09-02T22:29:41Z",
