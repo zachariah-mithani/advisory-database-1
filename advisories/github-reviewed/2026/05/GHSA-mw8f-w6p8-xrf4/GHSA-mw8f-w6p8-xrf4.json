@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-mw8f-w6p8-xrf4",
-  "modified": "2026-05-20T15:37:26Z",
+  "modified": "2026-05-20T15:37:30Z",
   "published": "2026-05-20T15:37:26Z",
   "aliases": [],
   "summary": "wger: cross-tenant account deletion / deactivation / activation by gym.manage_gym + gym=None",
@@ -26,7 +26,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "2.5"
+              "fixed": "2.6"
             }
           ]
         }
@@ -37,6 +37,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/wger-project/wger/security/advisories/GHSA-mw8f-w6p8-xrf4"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/wger-project/wger/commit/635d1dc4006c95a73f92b170ce0e183eb3ccddd6"
     },
     {
       "type": "PACKAGE",
