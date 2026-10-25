@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jhhc-3hcp-qhm5",
-  "modified": "2026-07-06T17:29:53Z",
+  "modified": "2026-07-06T17:29:54Z",
   "published": "2026-07-06T17:29:53Z",
   "aliases": [
     "CVE-2026-49452"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "68.1"
+              "fixed": "69.0"
             }
           ]
         }
@@ -41,8 +41,16 @@
       "url": "https://github.com/Kozea/WeasyPrint/security/advisories/GHSA-jhhc-3hcp-qhm5"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/Kozea/WeasyPrint/commit/e158264e33fa399b29f415d30719c1d85a55df1d"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/Kozea/WeasyPrint"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/Kozea/WeasyPrint/releases/tag/v69.0"
     }
   ],
   "database_specific": {
