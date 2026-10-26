@@ -44,7 +44,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "12.0.0"
             },
             {
               "fixed": "12.68.0"
@@ -93,10 +93,6 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/laravel/framework"
-    },
-    {
-      "type": "WEB",
-      "url": "https://github.com/laravel/framework/releases/tag/v11.56.1"
     },
     {
       "type": "WEB",
