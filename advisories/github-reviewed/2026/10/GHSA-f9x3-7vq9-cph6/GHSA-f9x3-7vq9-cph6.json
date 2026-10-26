@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-f9x3-7vq9-cph6",
-  "modified": "2026-10-23T21:50:27Z",
+  "modified": "2026-10-23T21:50:28Z",
   "published": "2026-10-23T21:50:27Z",
   "aliases": [
     "CVE-2026-114509"
@@ -52,6 +52,25 @@
           ]
         }
       ]
+    },
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "laravel/framework"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "11.56.1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "references": [
@@ -74,6 +93,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/laravel/framework"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/laravel/framework/releases/tag/v11.56.1"
     },
     {
       "type": "WEB",
