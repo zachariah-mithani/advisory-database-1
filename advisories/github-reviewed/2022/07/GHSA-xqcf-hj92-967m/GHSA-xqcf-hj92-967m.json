@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xqcf-hj92-967m",
-  "modified": "2023-07-25T20:00:40Z",
+  "modified": "2023-07-25T20:00:41Z",
   "published": "2022-07-24T00:00:33Z",
   "aliases": [
     "CVE-2018-25045"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "PyPI",
-        "name": "django-rest-framework"
+        "name": "djangorestframework"
       },
       "ranges": [
         {
