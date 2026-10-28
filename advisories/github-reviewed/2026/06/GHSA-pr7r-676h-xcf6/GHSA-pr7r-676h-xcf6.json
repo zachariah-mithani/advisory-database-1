@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-pr7r-676h-xcf6",
-  "modified": "2026-06-18T14:28:13Z",
+  "modified": "2026-06-24T14:11:34Z",
   "published": "2026-06-18T14:28:13Z",
   "aliases": [
     "CVE-2026-9678"
@@ -65,11 +65,23 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/nodejs/undici/commit/cb105d7c79069150982fa11acada0dd94a60dbbc"
+    },
+    {
+      "type": "WEB",
       "url": "https://cna.openjsf.org/security-advisories.html"
     },
     {
       "type": "PACKAGE",
       "url": "https://github.com/nodejs/undici"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/nodejs/undici/releases/tag/v7.28.0"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/nodejs/undici/releases/tag/v8.5.0"
     }
   ],
   "database_specific": {
