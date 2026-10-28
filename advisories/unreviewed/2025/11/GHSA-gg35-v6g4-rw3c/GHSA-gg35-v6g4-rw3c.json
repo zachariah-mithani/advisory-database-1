@@ -7,11 +7,11 @@
     "CVE-2025-63889"
   ],
   "summary": "ThinkPHP template path allows arbitrary file read and code execution",
-  "details": "The fetch function in file thinkphp\\library\\think\\Template.php in ThinkPHP 5.0.24 allows attackers to read arbitrary files via crafted file path in a template value.",
+  "details": "The fetch function in file thinkphp\\library\\think\\Template.php in ThinkPHP 5.0.24 allows attackers to read arbitrary files via crafted file path in a template value.\n\nBecause compiled templates execute inline PHP (tpl_deny_php defaults to false), the same path handling also allows code execution, not only a read.",
   "severity": [
     {
       "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
     }
   ],
   "affected": [
@@ -70,9 +70,10 @@
   ],
   "database_specific": {
     "cwe_ids": [
-      "CWE-125"
+      "CWE-22",
+      "CWE-94"
     ],
-    "severity": "HIGH",
+    "severity": "CRITICAL",
     "github_reviewed": false,
     "github_reviewed_at": null,
     "nvd_published_at": "2025-11-20T18:15:51Z"
