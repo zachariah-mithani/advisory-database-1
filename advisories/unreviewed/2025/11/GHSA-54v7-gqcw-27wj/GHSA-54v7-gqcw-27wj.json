@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-54v7-gqcw-27wj",
-  "modified": "2025-11-21T00:30:21Z",
+  "modified": "2025-11-21T15:31:25Z",
   "published": "2025-11-20T18:31:01Z",
   "aliases": [
     "CVE-2025-63888"
   ],
+  "summary": "ThinkPHP 5.0.x template driver File.php allows remote code execution (CVE-2025-63888)",
   "details": "The read function in file thinkphp\\library\\think\\template\\driver\\File.php in ThinkPHP 5.0.24 contains a remote code execution vulnerability.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "topthink/framework"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.24"
+            },
+            {
+              "last_affected": "5.0.25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
