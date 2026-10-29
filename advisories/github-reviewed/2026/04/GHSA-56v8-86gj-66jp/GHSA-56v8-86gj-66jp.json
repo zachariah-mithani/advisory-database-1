@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-56v8-86gj-66jp",
-  "modified": "2026-05-06T19:02:13Z",
+  "modified": "2026-05-06T19:02:16Z",
   "published": "2026-04-28T00:31:40Z",
   "aliases": [
     "CVE-2026-40972"
@@ -119,6 +119,14 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/spring-projects/spring-boot"
+    },
+    {
+      "type": "WEB",
+      "url": "https://spring.io/blog/2026/04/23/spring-boot-3-5-14-available-now"
+    },
+    {
+      "type": "WEB",
+      "url": "https://spring.io/blog/2026/04/23/spring-boot-4-0-6-available-now"
     },
     {
       "type": "WEB",
