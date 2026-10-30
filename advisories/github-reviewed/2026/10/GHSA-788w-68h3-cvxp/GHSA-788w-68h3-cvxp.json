@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-788w-68h3-cvxp",
-  "modified": "2026-10-07T20:43:08Z",
+  "modified": "2026-10-07T20:43:10Z",
   "published": "2026-10-07T20:43:08Z",
   "aliases": [
     "CVE-2026-105642"
@@ -47,6 +47,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/TryGhost/Ghost"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/TryGhost/Ghost/releases/tag/v6.67.0"
     }
   ],
   "database_specific": {
