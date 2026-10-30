@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q8hq-4h99-fj7x",
-  "modified": "2026-04-24T21:02:53Z",
+  "modified": "2026-04-24T21:02:54Z",
   "published": "2025-10-27T20:46:54Z",
   "aliases": [
     "CVE-2025-11419"
@@ -117,6 +117,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/keycloak/keycloak/discussions/25209"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/keycloak/keycloak/releases/tag/26.4.1"
     }
   ],
   "database_specific": {
