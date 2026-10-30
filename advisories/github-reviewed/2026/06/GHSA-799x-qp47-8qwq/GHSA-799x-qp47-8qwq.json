@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-799x-qp47-8qwq",
-  "modified": "2026-07-09T21:11:45Z",
+  "modified": "2026-07-09T21:11:46Z",
   "published": "2026-06-01T09:31:15Z",
   "aliases": [
     "CVE-2026-49267"
@@ -47,6 +47,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/apache/airflow"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/apache/airflow/releases/tag/3.2.2"
     },
     {
       "type": "WEB",
