@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fwxx-wv44-7qfg",
-  "modified": "2026-02-19T22:00:41Z",
+  "modified": "2026-02-19T22:00:42Z",
   "published": "2025-10-16T15:30:43Z",
   "aliases": [
     "CVE-2025-41253"
@@ -100,6 +100,14 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/spring-cloud/spring-cloud-gateway"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-cloud/spring-cloud-gateway/releases/tag/v4.2.6"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-cloud/spring-cloud-gateway/releases/tag/v4.3.2"
     },
     {
       "type": "WEB",
