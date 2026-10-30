@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7r4p-vjf4-gxv4",
-  "modified": "2026-03-09T15:50:54Z",
+  "modified": "2026-03-09T15:50:55Z",
   "published": "2026-03-06T23:38:44Z",
   "aliases": [
     "CVE-2026-30851"
@@ -57,8 +57,16 @@
       "url": "https://github.com/caddyserver/caddy/pull/7545"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/caddyserver/caddy/commit/2dbcdefbbee68e7b4a31ac66361a0f4e3bcd2eea"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/caddyserver/caddy"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/caddyserver/caddy/releases/tag/v2.11.2"
     }
   ],
   "database_specific": {
