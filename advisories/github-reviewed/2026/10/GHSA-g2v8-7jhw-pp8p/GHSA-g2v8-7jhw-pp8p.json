@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-g2v8-7jhw-pp8p",
-  "modified": "2026-10-07T17:59:19Z",
+  "modified": "2026-10-07T17:59:20Z",
   "published": "2026-10-07T17:59:19Z",
   "aliases": [
     "CVE-2026-106501"
@@ -64,25 +64,6 @@
           "events": [
             {
               "introduced": "4.0.0"
-            },
-            {
-              "fixed": "4.0.3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "package": {
-        "ecosystem": "npm",
-        "name": "@backstage/plugin-scaffolder-backend"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "4.0.4"
             },
             {
               "fixed": "4.1.0"
