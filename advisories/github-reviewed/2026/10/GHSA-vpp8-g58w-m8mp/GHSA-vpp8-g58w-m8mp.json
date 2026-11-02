@@ -55,6 +55,10 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/twisted/twisted/releases/tag/twisted-26.10.0"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/twisted/twisted/releases/tag/twisted-26.10.0rc1"
     },
     {
