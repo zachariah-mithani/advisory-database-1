@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-5849-834g-hvw5",
-  "modified": "2026-10-30T23:13:16Z",
+  "modified": "2026-10-30T23:13:17Z",
   "published": "2026-10-30T23:13:16Z",
   "aliases": [
     "CVE-2026-119203"
@@ -29,6 +29,22 @@
             },
             {
               "fixed": "6.21.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": "pypdf"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
             }
           ]
         }
