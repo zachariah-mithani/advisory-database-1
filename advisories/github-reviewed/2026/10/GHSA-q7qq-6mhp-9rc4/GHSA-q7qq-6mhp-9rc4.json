@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-q7qq-6mhp-9rc4",
-  "modified": "2026-10-23T20:44:43Z",
+  "modified": "2026-10-23T20:44:44Z",
   "published": "2026-10-23T20:44:43Z",
   "aliases": [
     "CVE-2026-115877"
@@ -58,6 +58,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/twisted/twisted"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/twisted/twisted/releases/tag/twisted-26.10.0"
     },
     {
       "type": "WEB",
