@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7hhj-8fwv-m5hc",
-  "modified": "2026-11-03T09:31:39Z",
+  "modified": "2026-11-03T09:32:45Z",
   "published": "2026-05-27T00:31:27Z",
   "aliases": [
     "CVE-2026-42012"
   ],
+  "summary": "Now",
   "details": "A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted certificate that contains Uniform Resource Identifier (URI) or Service (SRV) Subject Alternative Names (SANs). This could cause the certificate validation process to incorrectly fall back to checking DNS hostnames against the Common Name (CN), potentially allowing the attacker to spoof legitimate services or intercept sensitive information.",
   "severity": [
     {
@@ -13,7 +14,24 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
