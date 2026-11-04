@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-jx5v-788g-qw58",
-  "modified": "2023-01-27T00:01:21Z",
+  "modified": "2023-03-06T20:40:56Z",
   "published": "2022-05-13T01:34:32Z",
   "aliases": [
     "CVE-2018-14623"
   ],
   "summary": "katello SQL Injection vulnerability",
-  "details": "A SQL injection flaw was found in katello's errata-related API. An authenticated remote attacker can craft input data to force a malformed SQL query to the backend database, which will leak internal IDs. This is issue is related to an incomplete fix for CVE-2016-3072. Version 3.10 and older is vulnerable.",
+  "details": "A SQL injection flaw was found in katello's errata-related API. An authenticated remote attacker can craft input data to force a malformed SQL query to the backend database, which will leak internal IDs. This issue is related to an incomplete fix for CVE-2016-3072. Version 3.10 and older is vulnerable.",
   "severity": [
     {
       "type": "CVSS_V3",
