@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-2cvf-wqm6-wr9g",
-  "modified": "2026-11-03T15:51:31Z",
+  "modified": "2026-11-03T15:51:33Z",
   "published": "2026-10-15T20:22:16Z",
   "aliases": [
     "CVE-2026-94603"
@@ -15,25 +15,6 @@
     }
   ],
   "affected": [
-    {
-      "package": {
-        "ecosystem": "Go",
-        "name": "github.com/containers/podman/v4"
-      },
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "4.4.0"
-            },
-            {
-              "fixed": "5.8.8"
-            }
-          ]
-        }
-      ]
-    },
     {
       "package": {
         "ecosystem": "Go",
@@ -56,7 +37,7 @@
     {
       "package": {
         "ecosystem": "Go",
-        "name": "github.com/containers/podman/v5"
+        "name": "github.com/containers/podman/v4"
       },
       "ranges": [
         {
@@ -64,6 +45,22 @@
           "events": [
             {
               "introduced": "4.4.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/containers/podman/v5"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
             },
             {
               "fixed": "5.8.8"
