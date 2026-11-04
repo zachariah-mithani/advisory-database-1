@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fwhc-5w96-hjf3",
-  "modified": "2026-09-09T21:31:55Z",
+  "modified": "2026-09-09T21:31:56Z",
   "published": "2026-09-09T21:31:55Z",
   "aliases": [
     "CVE-2026-79322"
   ],
+  "summary": "SQL Injection in Mageplaza Blog for Magento 2",
   "details": "SQL injection in the RelatedProduct block in Mageplaza Blog for Magento 2 (mageplaza/magento-2-blog-extension) through 4.3.2 allows remote unauthenticated attackers to execute arbitrary SQL commands and read arbitrary database contents via the id parameter to /mpblog/post/view.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "mageplaza/magento-2-blog-extension"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.3.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
