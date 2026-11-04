@@ -6,6 +6,7 @@
   "aliases": [
     "CVE-2026-37236"
   ],
+  "summary": "grpc-gateway <= 2.28.0 is vulnerable to Incorrect Access Control",
   "details": "grpc-gateway v2.28.0 is vulnerable to Incorrect Access Control. The application processes the X-HTTP-Method-Override header in ServeMux.ServeHTTP without restricting allowed methods. When a POST request with Content-Type application/x-www-form-urlencoded includes this header, the request method is rewritten to an arbitrary attacker-supplied value before routing. This allows bypassing method-based access controls enforced by upstream proxies or WAFs.",
   "severity": [
     {
@@ -13,7 +14,30 @@
       "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/grpc-ecosystem/grpc-gateway"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "> 2.28.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 2.28.0"
+      }
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
@@ -24,7 +48,7 @@
       "url": "https://github.com/grpc-ecosystem/grpc-gateway/commit/72123cd4f32545f6e1376873f412dcdcbcf29acc"
     },
     {
-      "type": "WEB",
+      "type": "PACKAGE",
       "url": "https://github.com/grpc-ecosystem/grpc-gateway"
     },
     {
