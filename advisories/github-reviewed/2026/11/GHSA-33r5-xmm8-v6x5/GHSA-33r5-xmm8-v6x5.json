@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-33r5-xmm8-v6x5",
-  "modified": "2026-11-03T17:53:42Z",
+  "modified": "2026-11-03T17:53:43Z",
   "published": "2026-11-03T17:53:42Z",
   "aliases": [
     "CVE-2026-44267"
@@ -42,6 +42,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/enspirit/elo/security/advisories/GHSA-33r5-xmm8-v6x5"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/enspirit/elo/commit/2136da1f64eec8ebf99890d3100be9394534b842"
     },
     {
       "type": "PACKAGE",
