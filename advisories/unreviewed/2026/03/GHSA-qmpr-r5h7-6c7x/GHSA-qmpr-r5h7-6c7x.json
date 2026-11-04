@@ -1,11 +1,12 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-qmpr-r5h7-6c7x",
-  "modified": "2026-03-25T18:31:40Z",
+  "modified": "2026-03-25T18:32:42Z",
   "published": "2026-03-25T03:31:29Z",
   "aliases": [
     "CVE-2026-20637"
   ],
+  "summary": "Jun-Lab-Fix",
   "details": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.7.7 and iPadOS 18.7.7, iOS 26.3 and iPadOS 26.3, macOS Sequoia 15.7.5, macOS Sonoma 14.8.5, macOS Tahoe 26.3, tvOS 26.3, visionOS 26.3, watchOS 26.3. An app may be able to cause unexpected system termination.",
   "severity": [
     {
@@ -13,7 +14,27 @@
       "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
     }
   ],
-  "affected": [],
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "GitHub Actions",
+        "name": ""
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "iOS 18.7.7,iPadOS 18.7.7,masOS,Sequoia 15.7.5,macOS Sonoma 14.8.5,macOS Tahoe 26.3, tvOS 26.3, vision OS 26.3, watchOS 26.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "type": "ADVISORY",
