@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-9mrv-8pvf-hf4m",
-  "modified": "2026-08-20T18:32:05Z",
+  "modified": "2026-08-20T18:32:08Z",
   "published": "2026-06-12T12:31:33Z",
   "aliases": [
     "CVE-2026-50627"
@@ -44,10 +44,29 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "4.0.0"
             },
             {
               "fixed": "4.1.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-rs-security-oauth2"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.6.12"
             }
           ]
         }
