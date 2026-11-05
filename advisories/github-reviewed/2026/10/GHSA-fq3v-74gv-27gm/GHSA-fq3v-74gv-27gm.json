@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-fq3v-74gv-27gm",
-  "modified": "2026-10-07T20:22:49Z",
+  "modified": "2026-10-07T20:22:52Z",
   "published": "2026-10-07T20:22:49Z",
   "aliases": [
     "CVE-2026-107223"
@@ -28,7 +28,7 @@
               "introduced": "2.1.0"
             },
             {
-              "fixed": "2.11.1-0.20260807015645-a54c578af309"
+              "fixed": "2.11.1"
             }
           ]
         }
