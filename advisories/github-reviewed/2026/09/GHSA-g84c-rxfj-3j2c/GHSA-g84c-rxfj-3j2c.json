@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-g84c-rxfj-3j2c",
-  "modified": "2026-09-29T16:59:18Z",
+  "modified": "2026-09-29T16:59:19Z",
   "published": "2026-09-29T16:59:18Z",
   "aliases": [
     "CVE-2026-76844"
@@ -97,6 +97,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/webpack/webpack-dev-middleware/releases/tag/v8.3.0"
+    },
+    {
+      "type": "WEB",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-76844"
     },
     {
       "type": "WEB",
