@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-83r6-96m8-r52p",
-  "modified": "2026-08-20T18:32:34Z",
+  "modified": "2026-08-20T18:32:37Z",
   "published": "2026-06-12T12:31:33Z",
   "aliases": [
     "CVE-2026-50631"
   ],
   "summary": "Apache CXF OAuth2 TOCTOU Race Condition in Refresh Token Processing",
-  "details": "A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads. Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+  "details": "A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -44,10 +44,29 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "4.0.0"
             },
             {
               "fixed": "4.1.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-rs-security-oauth2"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.6.12"
             }
           ]
         }
