@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-r5jr-3m3c-4rp2",
-  "modified": "2026-11-03T21:32:00Z",
+  "modified": "2026-11-06T18:35:04Z",
   "published": "2026-11-02T18:32:27Z",
   "aliases": [
     "CVE-2026-99231"
@@ -18,6 +18,10 @@
     {
       "type": "ADVISORY",
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-99231"
+    },
+    {
+      "type": "WEB",
+      "url": "https://git.kernel.org/stable/c/6e11ce129b34fb9a43b2bbe838df49ea52878d5c"
     },
     {
       "type": "WEB",
