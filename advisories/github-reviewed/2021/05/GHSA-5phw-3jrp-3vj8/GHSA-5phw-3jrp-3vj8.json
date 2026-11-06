@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-5phw-3jrp-3vj8",
-  "modified": "2021-04-14T15:52:41Z",
+  "modified": "2023-02-01T05:05:25Z",
   "published": "2021-05-10T15:18:06Z",
   "aliases": [
     "CVE-2021-27905"
@@ -19,6 +19,25 @@
       "package": {
         "ecosystem": "Maven",
         "name": "org.apache.solr:solr-parent"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "8.8.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.solr:solr-core"
       },
       "ranges": [
         {
