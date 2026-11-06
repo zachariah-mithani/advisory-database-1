@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-mqvw-jfmh-93qq",
-  "modified": "2026-05-06T19:01:23Z",
+  "modified": "2026-05-06T19:01:26Z",
   "published": "2026-04-28T00:31:41Z",
   "aliases": [
     "CVE-2026-40974"
@@ -37,7 +37,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot-autoconfigure"
       },
       "ranges": [
         {
@@ -56,7 +56,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot-autoconfigure"
       },
       "ranges": [
         {
@@ -66,16 +66,19 @@
               "introduced": "3.4.0"
             },
             {
-              "last_affected": "3.4.15"
+              "fixed": "3.4.16"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.4.15"
+      }
     },
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot-autoconfigure"
       },
       "ranges": [
         {
@@ -85,16 +88,19 @@
               "introduced": "3.3.0"
             },
             {
-              "last_affected": "3.3.18"
+              "fixed": "3.3.19"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 3.3.18"
+      }
     },
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot-autoconfigure"
       },
       "ranges": [
         {
@@ -104,11 +110,14 @@
               "introduced": "0"
             },
             {
-              "last_affected": "2.7.32"
+              "fixed": "2.7.33"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 2.7.32"
+      }
     }
   ],
   "references": [
@@ -117,8 +126,28 @@
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40974"
     },
     {
+      "type": "WEB",
+      "url": "https://central.sonatype.com/artifact/org.springframework.boot/spring-boot-dependencies/4.0.5"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/spring-projects/spring-boot"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v2.7.0/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v3.5.13/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v4.0.5/module/spring-boot-cassandra/src/main/java/org/springframework/boot/cassandra/autoconfigure/CassandraAutoConfiguration.java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure/3.5.13"
     },
     {
       "type": "WEB",
