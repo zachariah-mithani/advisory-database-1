@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-3g3m-2fjr-6pw4",
-  "modified": "2026-10-30T23:09:11Z",
+  "modified": "2026-10-30T23:09:15Z",
   "published": "2026-10-30T23:09:11Z",
   "aliases": [
     "CVE-2026-118773"
@@ -28,14 +28,30 @@
               "introduced": "9.0.0"
             },
             {
+              "fixed": "13.0.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "glob"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "14.0.0"
+            },
+            {
               "fixed": "14.0.2"
             }
           ]
         }
-      ],
-      "database_specific": {
-        "last_known_affected_version_range": "<= 14.0.1"
-      }
+      ]
     }
   ],
   "references": [
@@ -52,8 +68,16 @@
       "url": "https://github.com/isaacs/node-glob/commit/4682e8c9babee1b385202ede36389634e12076d7"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/isaacs/node-glob/commit/d94a8c8d0a89b89436d9612ebea6f9995104e05e"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/isaacs/node-glob"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/isaacs/node-glob/compare/v13.0.6...v13.0.7"
     },
     {
       "type": "WEB",
