@@ -1,13 +1,13 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-f8p7-h97q-7vx7",
-  "modified": "2026-08-20T18:31:33Z",
+  "modified": "2026-08-20T18:31:36Z",
   "published": "2026-06-12T12:31:33Z",
   "aliases": [
     "CVE-2026-50629"
   ],
   "summary": "Apache CXF OAuth2 Log Injection via Unsanitized Client Identifier",
-  "details": "The 'clientId' parameter from incoming HTTP requests is directly concatenated into OAuth2 server log warning messages without sanitizing control characters. This allows an attacker to inject arbitrary content, including fake log entries, into the server's log files. Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+  "details": "The 'clientId' parameter from incoming HTTP requests is directly concatenated into OAuth2 server log warning messages without sanitizing control characters. This allows an attacker to inject arbitrary content, including fake log entries, into the server's log files. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
   "severity": [
     {
       "type": "CVSS_V3",
@@ -44,10 +44,29 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "4.0.0"
             },
             {
               "fixed": "4.1.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.cxf:cxf-rt-rs-security-oauth2"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.6.12"
             }
           ]
         }
