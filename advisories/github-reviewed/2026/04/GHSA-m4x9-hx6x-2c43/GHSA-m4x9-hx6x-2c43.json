@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-m4x9-hx6x-2c43",
-  "modified": "2026-05-06T18:54:42Z",
+  "modified": "2026-05-06T18:54:45Z",
   "published": "2026-04-28T00:31:41Z",
   "aliases": [
     "CVE-2026-40975"
@@ -18,7 +18,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot"
       },
       "ranges": [
         {
@@ -37,7 +37,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot"
       },
       "ranges": [
         {
@@ -56,7 +56,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot"
       },
       "ranges": [
         {
@@ -75,7 +75,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot"
       },
       "ranges": [
         {
@@ -94,7 +94,7 @@
     {
       "package": {
         "ecosystem": "Maven",
-        "name": "org.springframework.boot:spring-boot-cassandra"
+        "name": "org.springframework.boot:spring-boot"
       },
       "ranges": [
         {
@@ -119,6 +119,18 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/spring-projects/spring-boot"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v2.7.0/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/env/RandomValuePropertySource.java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v3.5.13/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/env/RandomValuePropertySource.java"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/spring-projects/spring-boot/blob/v4.0.5/core/spring-boot/src/main/java/org/springframework/boot/env/RandomValuePropertySource.java"
     },
     {
       "type": "WEB",
