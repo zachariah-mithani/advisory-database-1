@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-rg6c-rqpp-49q4",
-  "modified": "2026-11-06T12:30:46Z",
+  "modified": "2026-11-06T21:31:20Z",
   "published": "2026-11-06T12:30:46Z",
   "aliases": [
     "CVE-2025-66621"
@@ -17,6 +17,10 @@
     {
       "type": "WEB",
       "url": "https://lists.apache.org/thread.html/xz1g0blzcbxod69oktyq84h7t06xzov6"
+    },
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2026/11/06/13"
     }
   ],
   "database_specific": {

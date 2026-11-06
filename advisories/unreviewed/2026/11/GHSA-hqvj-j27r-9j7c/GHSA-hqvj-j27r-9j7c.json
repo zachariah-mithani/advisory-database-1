@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-hqvj-j27r-9j7c",
-  "modified": "2026-11-05T06:34:37Z",
+  "modified": "2026-11-06T21:31:14Z",
   "published": "2026-11-05T06:34:37Z",
   "aliases": [
     "CVE-2026-123012"
@@ -30,6 +30,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/gogs/gogs/blob/3ba8aca90e17e5410b7e8b227c9f29256ac3e875/internal/route/repo/http.go#L64-L68"
+    },
+    {
+      "type": "WEB",
+      "url": "https://humanoid.sh/blog/gogs-cve-2026-123012"
     }
   ],
   "database_specific": {

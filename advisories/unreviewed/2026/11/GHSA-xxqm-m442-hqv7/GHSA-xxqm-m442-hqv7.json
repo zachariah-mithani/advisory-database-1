@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-xxqm-m442-hqv7",
-  "modified": "2026-11-06T12:30:46Z",
+  "modified": "2026-11-06T21:31:20Z",
   "published": "2026-11-06T12:30:46Z",
   "aliases": [
     "CVE-2026-76168"
@@ -17,6 +17,10 @@
     {
       "type": "WEB",
       "url": "https://lists.apache.org/thread.html/rpp3rx9zzn2hs3kp3kdko9oh3qrmdnk2"
+    },
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2026/11/06/16"
     }
   ],
   "database_specific": {

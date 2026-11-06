@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-qr8x-486x-7mhg",
-  "modified": "2026-11-06T12:30:47Z",
+  "modified": "2026-11-06T21:31:20Z",
   "published": "2026-11-06T12:30:47Z",
   "aliases": [
     "CVE-2026-76171"
@@ -17,6 +17,10 @@
     {
       "type": "WEB",
       "url": "https://lists.apache.org/thread.html/goj9xc05nbk1dp0z2g3r264j537lvx9r"
+    },
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2026/11/06/17"
     }
   ],
   "database_specific": {

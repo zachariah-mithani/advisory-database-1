@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-qhf2-jq27-4g43",
-  "modified": "2026-11-06T12:30:46Z",
+  "modified": "2026-11-06T21:31:20Z",
   "published": "2026-11-06T12:30:46Z",
   "aliases": [
     "CVE-2026-74756"
@@ -17,6 +17,10 @@
     {
       "type": "WEB",
       "url": "https://lists.apache.org/thread.html/5zhn007mc3jz691zhb2687ow2n7f0zp0"
+    },
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2026/11/06/15"
     }
   ],
   "database_specific": {
