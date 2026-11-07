@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-c7hr-448w-65px",
-  "modified": "2026-08-18T20:09:35Z",
+  "modified": "2026-08-18T20:09:36Z",
   "published": "2026-08-18T20:09:35Z",
   "aliases": [],
   "summary": "MeshCentral has unsanitized data fields",
@@ -37,6 +37,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/Ylianst/MeshCentral/security/advisories/GHSA-c7hr-448w-65px"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/Ylianst/MeshCentral/commit/aee83b77809ee47e6ec2a2cbe50800244a155722"
     },
     {
       "type": "PACKAGE",
