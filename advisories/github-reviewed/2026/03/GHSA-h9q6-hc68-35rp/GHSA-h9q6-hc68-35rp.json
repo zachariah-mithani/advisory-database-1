@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-h9q6-hc68-35rp",
-  "modified": "2026-03-30T13:57:05Z",
+  "modified": "2026-03-30T13:57:06Z",
   "published": "2026-03-18T12:59:54Z",
   "aliases": [
     "CVE-2026-32284"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "2.4.0"
+              "fixed": "2.4.1"
             }
           ]
         }
@@ -47,7 +47,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "3.1.0"
+              "fixed": "3.1.1"
             }
           ]
         }
@@ -68,8 +68,24 @@
       "url": "https://github.com/shamaton/msgpack/issues/59"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/shamaton/msgpack/pull/60"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/shamaton/msgpack/pull/66"
+    },
+    {
       "type": "PACKAGE",
       "url": "https://github.com/shamaton/msgpack"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/shamaton/msgpack/releases/tag/v2.4.1"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/shamaton/msgpack/releases/tag/v3.1.1"
     },
     {
       "type": "WEB",
