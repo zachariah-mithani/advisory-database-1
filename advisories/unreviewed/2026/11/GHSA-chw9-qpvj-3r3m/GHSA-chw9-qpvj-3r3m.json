@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-chw9-qpvj-3r3m",
-  "modified": "2026-11-02T15:31:45Z",
+  "modified": "2026-11-07T03:31:07Z",
   "published": "2026-11-02T15:31:45Z",
   "aliases": [
     "CVE-2026-120458"
@@ -38,6 +38,10 @@
     {
       "type": "WEB",
       "url": "https://github.com/ultravideo/kvazaar/releases/tag/v2.3.2"
+    },
+    {
+      "type": "WEB",
+      "url": "https://hackmd.io/@haindpwn/cve-2026-120458-kvazaar-y4m-header-missing-newline-infinite-loop"
     },
     {
       "type": "WEB",
