@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7v3r-m9c8-r855",
-  "modified": "2026-07-21T13:51:55Z",
+  "modified": "2026-05-14T20:52:17Z",
   "published": "2026-05-07T00:55:44Z",
   "aliases": [
     "CVE-2026-42590"
@@ -28,7 +28,7 @@
               "introduced": "0"
             },
             {
-              "last_affected": "8.29.1"
+              "fixed": "8.31.0"
             }
           ]
         }
@@ -45,12 +45,20 @@
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42590"
     },
     {
+      "type": "WEB",
+      "url": "https://github.com/gotenberg/gotenberg/commit/46e1909"
+    },
+    {
       "type": "ADVISORY",
       "url": "https://github.com/advisories/GHSA-qmwh-9m9c-h36m"
     },
     {
       "type": "PACKAGE",
       "url": "https://github.com/gotenberg/gotenberg"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/gotenberg/gotenberg/releases/tag/v8.31.0"
     }
   ],
   "database_specific": {
