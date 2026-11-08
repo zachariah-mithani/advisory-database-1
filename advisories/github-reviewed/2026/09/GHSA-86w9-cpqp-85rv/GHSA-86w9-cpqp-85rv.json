@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-86w9-cpqp-85rv",
-  "modified": "2026-10-01T21:09:09Z",
+  "modified": "2026-10-01T21:09:10Z",
   "published": "2026-09-03T21:31:15Z",
   "aliases": [
     "CVE-2026-85393"
@@ -9,10 +9,6 @@
   "summary": "node-forge RSA PKCS#1 v1.5 signature verification accepts extra nested DigestAlgorithm elements",
   "details": "node-forge through 1.4.0 fails to validate element count in nested DigestAlgorithm sequences during RSA PKCS#1 v1.5 signature verification. Attackers can embed garbage bytes inside the DigestAlgorithm sequence to forge valid signatures for arbitrary messages using low-exponent RSA keys. This is an incomplete fix for CVE-2026-33894.",
   "severity": [
-    {
-      "type": "CVSS_V3",
-      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
-    },
     {
       "type": "CVSS_V4",
       "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N"
@@ -32,11 +28,14 @@
               "introduced": "0"
             },
             {
-              "last_affected": "1.4.0"
+              "fixed": "1.4.1"
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "last_known_affected_version_range": "<= 1.4.0"
+      }
     }
   ],
   "references": [
