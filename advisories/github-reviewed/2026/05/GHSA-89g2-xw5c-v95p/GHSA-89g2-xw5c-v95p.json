@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-89g2-xw5c-v95p",
-  "modified": "2026-05-05T18:57:10Z",
+  "modified": "2026-05-05T18:57:12Z",
   "published": "2026-05-05T18:57:10Z",
   "aliases": [
     "CVE-2026-42079"
@@ -51,6 +51,10 @@
     {
       "type": "PACKAGE",
       "url": "https://github.com/icip-cas/PPTAgent"
+    },
+    {
+      "type": "WEB",
+      "url": "https://pypi.org/project/pptagent/1.1.36"
     }
   ],
   "database_specific": {
