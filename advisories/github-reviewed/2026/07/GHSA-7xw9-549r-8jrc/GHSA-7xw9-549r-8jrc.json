@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4.0",
   "id": "GHSA-7xw9-549r-8jrc",
-  "modified": "2026-07-13T18:38:13Z",
+  "modified": "2026-07-13T18:38:14Z",
   "published": "2026-07-13T18:38:13Z",
   "aliases": [],
   "summary": "DIRAC: SQL injection and lack of access control in PilotManager service",
@@ -75,6 +75,14 @@
     {
       "type": "WEB",
       "url": "https://github.com/DIRACGrid/DIRAC/security/advisories/GHSA-7xw9-549r-8jrc"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/DIRACGrid/DIRAC/commit/8731de576cf96826dbbf505508526ada31efb927"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/DIRACGrid/DIRAC/commit/f67f754d4eef5bf40a8223dab77cf2591808031f"
     },
     {
       "type": "PACKAGE",
